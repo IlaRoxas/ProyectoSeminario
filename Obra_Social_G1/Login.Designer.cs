@@ -42,7 +42,7 @@
             this.label1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(388, 84);
+            this.label1.Location = new System.Drawing.Point(520, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 15);
             this.label1.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             this.txtMail.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtMail.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMail.Location = new System.Drawing.Point(387, 100);
+            this.txtMail.Location = new System.Drawing.Point(519, 53);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(213, 23);
             this.txtMail.TabIndex = 1;
@@ -63,7 +63,7 @@
             this.label2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(390, 181);
+            this.label2.Location = new System.Drawing.Point(522, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(159, 15);
             this.label2.TabIndex = 2;
@@ -73,7 +73,7 @@
             // 
             this.txtContrasenia.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtContrasenia.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenia.Location = new System.Drawing.Point(387, 197);
+            this.txtContrasenia.Location = new System.Drawing.Point(519, 150);
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(213, 23);
             this.txtContrasenia.TabIndex = 3;
@@ -83,7 +83,7 @@
             this.btnIniciarSesion.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnIniciarSesion.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(387, 272);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(519, 225);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(209, 37);
             this.btnIniciarSesion.TabIndex = 4;
@@ -98,7 +98,7 @@
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(603, 379);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.txtContrasenia);
             this.Controls.Add(this.label2);
