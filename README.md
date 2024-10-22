@@ -16,7 +16,7 @@ Este proyecto es un sistema de gestión desarrollado en WinForms para facilitar 
 El sistema incluye las siguientes funcionalidades:
 
 ### Inicio de Sesión
-- Se inicia sesión son email y contraseña del administrador, cargada en la base de datos.
+- Se inicia sesión con email y contraseña del administrador, cargada en la base de datos.
 
 ### Médicos
 - Registro de nuevos médicos.
