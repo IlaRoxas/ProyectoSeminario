@@ -15,6 +15,9 @@ Este proyecto es un sistema de gestión desarrollado en WinForms para facilitar 
 
 El sistema incluye las siguientes funcionalidades:
 
+### Inicio de Sesión
+- Se inicia sesión son email y contraseña del administrador, cargada en la base de datos.
+
 ### Médicos
 - Registro de nuevos médicos.
 - Modificación de datos de médicos existentes.
@@ -36,5 +39,3 @@ El sistema incluye las siguientes funcionalidades:
 - **Capa de Lógica**: Contiene la lógica de negocio y la validación de datos.
 - **Capa de Entidades**: Contiene las clases que representan los objetos del dominio del sistema. Cada clase corresponde a una tabla en la base de datos y define las propiedades necesarias para gestionar los datos.
 - **Capa de Presentación**: Interfaz de usuario y manejo de eventos.
-
-## Instalación
