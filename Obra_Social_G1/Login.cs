@@ -20,6 +20,7 @@ namespace Presentacion
             string password = txtContrasenia.Text.Trim();
 
             string mensaje;
+
             if(usuario.Login(mail, password, out mensaje)) 
             {
                 MessageBox.Show("Inicio de sesión exitoso");
