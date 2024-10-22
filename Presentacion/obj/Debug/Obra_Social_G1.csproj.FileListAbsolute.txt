@@ -1,0 +1,10 @@
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\bin\Debug\Obra_Social_G1.exe.config
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\bin\Debug\Obra_Social_G1.exe
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\bin\Debug\Obra_Social_G1.pdb
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.csproj.AssemblyReference.cache
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.Form1.resources
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.Properties.Resources.resources
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.csproj.GenerateResource.cache
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.csproj.CoreCompileInputs.cache
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.exe
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.pdb
