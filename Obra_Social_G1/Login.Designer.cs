@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,56 +39,72 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(332, 46);
+            this.label1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(388, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.Size = new System.Drawing.Size(116, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ingrese su email:";
+            this.label1.Text = "INGRESE SU EMAIL:";
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(335, 80);
+            this.txtMail.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtMail.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMail.Location = new System.Drawing.Point(387, 100);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(100, 20);
+            this.txtMail.Size = new System.Drawing.Size(213, 23);
             this.txtMail.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(335, 139);
+            this.label2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(390, 181);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 13);
+            this.label2.Size = new System.Drawing.Size(159, 15);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Ingrese su contraseña:";
+            this.label2.Text = "INGRESE SU CONTRASEÑA:";
             // 
             // txtContrasenia
             // 
-            this.txtContrasenia.Location = new System.Drawing.Point(338, 182);
+            this.txtContrasenia.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtContrasenia.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenia.Location = new System.Drawing.Point(387, 197);
             this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.Size = new System.Drawing.Size(100, 20);
+            this.txtContrasenia.Size = new System.Drawing.Size(213, 23);
             this.txtContrasenia.TabIndex = 3;
             // 
             // btnIniciarSesion
             // 
-            this.btnIniciarSesion.Location = new System.Drawing.Point(343, 262);
+            this.btnIniciarSesion.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnIniciarSesion.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciarSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnIniciarSesion.Location = new System.Drawing.Point(387, 272);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
-            this.btnIniciarSesion.Size = new System.Drawing.Size(125, 23);
+            this.btnIniciarSesion.Size = new System.Drawing.Size(209, 37);
             this.btnIniciarSesion.TabIndex = 4;
-            this.btnIniciarSesion.Text = "Iniciar sesión";
-            this.btnIniciarSesion.UseVisualStyleBackColor = true;
+            this.btnIniciarSesion.Text = "INICIAR SESIÓN";
+            this.btnIniciarSesion.UseVisualStyleBackColor = false;
             this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
-            // Form1
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(603, 379);
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.txtContrasenia);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMail);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "Login";
             this.Text = "Iniciar sesión";
             this.ResumeLayout(false);
             this.PerformLayout();
