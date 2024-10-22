@@ -7,8 +7,8 @@ Este proyecto es un sistema de gestión desarrollado en WinForms para facilitar 
 ## Tecnologías Utilizadas
 
 - **Lenguaje**: C#
-- **Framework**: .NET Framework (version específica)
-- **Base de Datos**: MySQL (o cualquier otra base de datos utilizada)
+- **Framework**: .NET Framework
+- **Base de Datos**: MySQL 
 - **IDE**: Visual Studio
 
 ## Funcionalidades
