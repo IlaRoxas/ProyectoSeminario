@@ -39,10 +39,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(520, 37);
+            this.label1.Location = new System.Drawing.Point(512, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 15);
             this.label1.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             this.txtMail.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtMail.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMail.Location = new System.Drawing.Point(519, 53);
+            this.txtMail.Location = new System.Drawing.Point(511, 104);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(213, 23);
             this.txtMail.TabIndex = 1;
@@ -60,10 +60,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(522, 134);
+            this.label2.Location = new System.Drawing.Point(514, 185);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(159, 15);
             this.label2.TabIndex = 2;
@@ -73,17 +73,18 @@
             // 
             this.txtContrasenia.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtContrasenia.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenia.Location = new System.Drawing.Point(519, 150);
+            this.txtContrasenia.Location = new System.Drawing.Point(511, 201);
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(213, 23);
             this.txtContrasenia.TabIndex = 3;
+            this.txtContrasenia.TextChanged += new System.EventHandler(this.txtContrasenia_TextChanged);
             // 
             // btnIniciarSesion
             // 
-            this.btnIniciarSesion.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnIniciarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnIniciarSesion.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciarSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(519, 225);
+            this.btnIniciarSesion.ForeColor = System.Drawing.Color.Lavender;
+            this.btnIniciarSesion.Location = new System.Drawing.Point(511, 276);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(209, 37);
             this.btnIniciarSesion.TabIndex = 4;

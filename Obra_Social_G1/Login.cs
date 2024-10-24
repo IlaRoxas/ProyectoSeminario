@@ -1,5 +1,4 @@
 ﻿using System;
-using Logica;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -30,6 +29,11 @@ namespace Presentacion
                 MessageBox.Show(mensaje);
             }
             
+        }
+
+        private void txtContrasenia_TextChanged(object sender, EventArgs e)
+        {
+            txtContrasenia.UseSystemPasswordChar = true;
         }
     }
 }

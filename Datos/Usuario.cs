@@ -42,7 +42,7 @@ namespace Datos
         {
             using (var conexion = GetConnection())
             {
-                string query = "UPDATE usuarios SET intentos_fallidos = 0 WHERE email_usuario = @email_usuario";
+                string query = "UPDATE usuario SET intentos_fallidos = 0 WHERE email_usuario = @email_usuario";
 
                 using (var cmd = new MySqlCommand(query, conexion))
                 {
@@ -56,7 +56,7 @@ namespace Datos
         {
             using (var conexion = GetConnection())
             {
-                string query = "UPDATE usuarios SET intentos_fallidos = intentos_fallidos + 1 WHERE email_usuario = @email_usuario";
+                string query = "UPDATE usuario SET intentos_fallidos = intentos_fallidos + 1 WHERE email_usuario = @email_usuario";
 
                 using (var cmd = new MySqlCommand(query, conexion))
                 {
@@ -94,11 +94,11 @@ namespace Datos
         {
             using (var conexion = GetConnection())
             {
-                string query = "UPDATE usuarios SET bloqueado = TRUE WHERE email = @Email";
+                string query = "UPDATE usuario SET bloqueado = TRUE WHERE email_usuario = @email_usuario";
 
                 using (var cmd = new MySqlCommand(query, conexion))
                 {
-                    cmd.Parameters.AddWithValue("@Email", email_usuario);
+                    cmd.Parameters.AddWithValue("@email_usuario", email_usuario);
                     cmd.ExecuteNonQuery();
                 }
             }
