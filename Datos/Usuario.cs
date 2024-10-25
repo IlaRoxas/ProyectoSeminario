@@ -7,10 +7,6 @@ namespace Datos
 {
     public class Usuario : Conexion
     {
-        public bool EstaBloqueado()
-        {
-            return false;
-        }
         public bool Login(string email_usuario, string contrasenia)
         {
             bool loginexitoso = false;
@@ -38,31 +34,59 @@ namespace Datos
             }
             return loginexitoso;
         }
-        public void RestaurarQItntentosFallidos(string email_usuario)
+        //Ingreso de usuario
+        public (string email_usuario, bool esta_bloqueado) ObtenerMailUsuario (string email_usuario)
         {
-            using (var conexion = GetConnection())
+            email_usuario = string.Empty;
+            bool esta_bloqueado = false;
+            try
             {
-                string query = "UPDATE usuario SET intentos_fallidos = 0 WHERE email_usuario = @email_usuario";
-
-                using (var cmd = new MySqlCommand(query, conexion))
+                using (MySqlConnection conexion = GetConnection())
                 {
-                    cmd.Parameters.AddWithValue("@email_usuario", email_usuario);
-                    cmd.ExecuteNonQuery();
+                    using (MySqlCommand command = new MySqlCommand())
+                    {
+                        command.Connection = conexion;
+                        command.CommandText = "SELECT email_usuario, bloqueado FROM usuario WHERE email_usuario = @email_usuario";
+                        command.Parameters.AddWithValue("@email_usuario", email_usuario);
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                email_usuario = reader.GetString("email_usuario");
+                                esta_bloqueado = reader.GetBoolean("bloqueado");
+                            }
+                        }
+                    }
                 }
             }
-        }
-        // Método para incrementar los intentos fallidos
-        public void IncrementarIntentosFallidos(string email_usuario)
-        {
-            using (var conexion = GetConnection())
+            catch (MySqlException e)
             {
-                string query = "UPDATE usuario SET intentos_fallidos = intentos_fallidos + 1 WHERE email_usuario = @email_usuario";
-
-                using (var cmd = new MySqlCommand(query, conexion))
+                Console.WriteLine($"Error en el método ObtenerMailUsuario: {e.Message}");
+            }
+            return (email_usuario, esta_bloqueado);
+        }//Obtengo el mail del usuario para usarlo en "EstaBloqueado" y en el login
+        public bool EstaBloqueado(string email_usuario)
+        {
+            try
+            {
+                using (MySqlConnection conexion = GetConnection())
                 {
-                    cmd.Parameters.AddWithValue("@email_usuario", email_usuario);
-                    cmd.ExecuteNonQuery();
+                    using (MySqlCommand command = new MySqlCommand("SELECT bloqueado FROM usuario WHERE email_usuario = @email_usuario", conexion))
+                    {
+                        command.Parameters.AddWithValue("@email_usuario", email_usuario);
+                        object result = command.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            return Convert.ToBoolean(result);
+                        }
+                    }
                 }
+                return false;
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine($"Error en el método EstaBloqueado: {e.Message}");
+                return false;
             }
         }
         // Método para obtener la cantidad de intentos fallidos
@@ -89,6 +113,33 @@ namespace Datos
             }
             return intentosFallidos;
         }
+        // Método para incrementar los intentos fallidos
+        public void IncrementarIntentosFallidos(string email_usuario)
+        {
+            using (var conexion = GetConnection())
+            {
+                string query = "UPDATE usuario SET intentos_fallidos = intentos_fallidos + 1 WHERE email_usuario = @email_usuario";
+
+                using (var cmd = new MySqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@email_usuario", email_usuario);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        public void RestaurarQItntentosFallidos(string email_usuario)
+        {
+            using (var conexion = GetConnection())
+            {
+                string query = "UPDATE usuario SET intentos_fallidos = 0 WHERE email_usuario = @email_usuario";
+
+                using (var cmd = new MySqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@email_usuario", email_usuario);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
         // Método para bloquear un usuario
         public void BloquearUsuario(string email_usuario)
         {
@@ -103,5 +154,7 @@ namespace Datos
                 }
             }
         }
+        
+       
     }
 }

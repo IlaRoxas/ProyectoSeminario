@@ -22,14 +22,24 @@ namespace Logica
             }
             try
             {
+                //Preguntamos si el usuario está bloqueado
+                if (usuario.EstaBloqueado(email_usuario) == true)
+                {
+                    mensaje = "Usuario bloqueado";
+                    return false;
+
+                }
                 // Llamar al método de la capa de datos para el login
                 if (usuario.Login(email_usuario, contrasenia))
                 {
+                    usuario.RestaurarQItntentosFallidos(email_usuario);
+
                     mensaje = "Inicio de sesión exitoso";
                     return true;
                 }
                 else
                 {
+                    usuario.IncrementarIntentosFallidos(email_usuario);
                     mensaje = "Usuario o contraseña incorrectos";
                     return false;
                 }
