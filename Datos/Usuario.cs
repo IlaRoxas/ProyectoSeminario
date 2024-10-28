@@ -95,7 +95,7 @@ namespace Datos
             int intentosFallidos = 0;
             using (var conexion = GetConnection())
             {
-                string query = "SELECT intentos_fallidos FROM usuarios WHERE email_usuario = @email_usuario";
+                string query = "SELECT intentos_fallidos FROM usuario WHERE email_usuario = @email_usuario";
 
                 using (var cmd = new MySqlCommand(query, conexion))
                 {

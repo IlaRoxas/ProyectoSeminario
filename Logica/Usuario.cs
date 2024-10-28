@@ -40,7 +40,16 @@ namespace Logica
                 else
                 {
                     usuario.IncrementarIntentosFallidos(email_usuario);
-                    mensaje = "Usuario o contraseña incorrectos";
+                    int intentosFallidos = usuario.QintentosFallidosLogin(email_usuario);
+
+                    if (intentosFallidos >= 4){
+                        usuario.BloquearUsuario(email_usuario);
+                        mensaje = "Usuario bloqueado debido a múltiples intentos fallidos";
+                    }
+                    else
+                    {
+                        mensaje = "Usuario o contraseña incorrectos";
+                    }
                     return false;
                 }
             }
