@@ -1,6 +1,5 @@
 ﻿using Datos;
 using System;
-
 namespace Logica
 {
     public class Usuario

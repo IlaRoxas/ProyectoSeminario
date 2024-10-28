@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Obra_Social_G1;
+using System;
 using System.Windows.Forms;
-
+using Infraestructura;
 namespace Presentacion
 {
     public partial class Login : Form
@@ -22,7 +23,11 @@ namespace Presentacion
 
             if(usuario.Login(mail, password, out mensaje)) 
             {
-                MessageBox.Show("Inicio de sesión exitoso");
+                Sesion.UsuarioActivo = mail;
+                frmInicio formInicio = new frmInicio();
+                formInicio.Show();
+                //Ocultar o cerrar el formulario de inicio de sesión
+                this.Hide();
             }
             else
             {

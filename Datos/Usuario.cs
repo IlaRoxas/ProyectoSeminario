@@ -9,7 +9,8 @@ namespace Datos
     {
         public bool Login(string email_usuario, string contrasenia)
         {
-            bool loginexitoso = false;
+            bool loginExitoso = false;
+
             using (var conexion = GetConnection())
             {
 
@@ -23,7 +24,7 @@ namespace Datos
                     try
                     {
                         int count = Convert.ToInt32(cmd.ExecuteScalar());
-                        loginexitoso = count > 0; // Si el conteo es mayor que 0, el login es exitoso
+                        loginExitoso = count > 0; // Si el conteo es mayor que 0, el login es exitoso
                     }
                     catch (MySqlException ex)
                     {
@@ -32,7 +33,7 @@ namespace Datos
                     }
                 }
             }
-            return loginexitoso;
+            return loginExitoso;
         }
         //Ingreso de usuario
         public (string email_usuario, bool esta_bloqueado) ObtenerMailUsuario (string email_usuario)
