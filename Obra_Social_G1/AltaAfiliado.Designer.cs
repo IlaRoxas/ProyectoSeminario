@@ -53,12 +53,13 @@
             this.btnCancelarAf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCancelarAf.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelarAf.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarAf.Location = new System.Drawing.Point(588, 454);
+            this.btnCancelarAf.Location = new System.Drawing.Point(312, 462);
             this.btnCancelarAf.Name = "btnCancelarAf";
             this.btnCancelarAf.Size = new System.Drawing.Size(180, 42);
             this.btnCancelarAf.TabIndex = 8;
             this.btnCancelarAf.Text = "Cancelar";
             this.btnCancelarAf.UseVisualStyleBackColor = false;
+            this.btnCancelarAf.Click += new System.EventHandler(this.btnCancelarAf_Click);
             // 
             // btnAgregarAf
             // 
@@ -67,7 +68,7 @@
             this.btnAgregarAf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAgregarAf.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarAf.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarAf.Location = new System.Drawing.Point(389, 454);
+            this.btnAgregarAf.Location = new System.Drawing.Point(513, 462);
             this.btnAgregarAf.Name = "btnAgregarAf";
             this.btnAgregarAf.Size = new System.Drawing.Size(180, 42);
             this.btnAgregarAf.TabIndex = 7;

@@ -38,13 +38,28 @@ namespace Obra_Social_G1
             if(exito)    
             {
                 MessageBox.Show("Afiliado agregado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                LimpiarTextBoxes();
             }
             else
             {
                 MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+        private void LimpiarTextBoxes()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    ((TextBox)control).Text = string.Empty;
+                }
+            }
+        }
+
+        private void btnCancelarAf_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

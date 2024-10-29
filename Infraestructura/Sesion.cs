@@ -9,6 +9,5 @@ namespace Infraestructura
     public static class Sesion
     {
         public static string UsuarioActivo { get; set; }
-
     }
 }

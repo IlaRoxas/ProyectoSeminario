@@ -35,37 +35,10 @@ namespace Datos
             }
             return loginExitoso;
         }
-        //Ingreso de usuario
-        public (string email_usuario, bool esta_bloqueado) ObtenerMailUsuario (string email_usuario)
-        {
-            email_usuario = string.Empty;
-            bool esta_bloqueado = false;
-            try
-            {
-                using (MySqlConnection conexion = GetConnection())
-                {
-                    using (MySqlCommand command = new MySqlCommand())
-                    {
-                        command.Connection = conexion;
-                        command.CommandText = "SELECT email_usuario, bloqueado FROM usuario WHERE email_usuario = @email_usuario";
-                        command.Parameters.AddWithValue("@email_usuario", email_usuario);
-                        using (MySqlDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                email_usuario = reader.GetString("email_usuario");
-                                esta_bloqueado = reader.GetBoolean("bloqueado");
-                            }
-                        }
-                    }
-                }
-            }
-            catch (MySqlException e)
-            {
-                Console.WriteLine($"Error en el método ObtenerMailUsuario: {e.Message}");
-            }
-            return (email_usuario, esta_bloqueado);
-        }//Obtengo el mail del usuario para usarlo en "EstaBloqueado" y en el login
+
+        /// <summary> 
+        /// Consulta si el usuario está bloqueado a través de su email
+        /// </summary> 
         public bool EstaBloqueado(string email_usuario)
         {
             try
