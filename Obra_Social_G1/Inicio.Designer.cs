@@ -59,7 +59,7 @@
             this.salirTSMI});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(786, 38);
+            this.menuStrip.Size = new System.Drawing.Size(784, 38);
             this.menuStrip.TabIndex = 2;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -212,7 +212,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(786, 560);
+            this.ClientSize = new System.Drawing.Size(784, 560);
             this.Controls.Add(this.menuStrip);
             this.Name = "frmInicio";
             this.Text = "Inicio";

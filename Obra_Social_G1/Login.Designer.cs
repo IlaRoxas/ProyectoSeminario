@@ -99,7 +99,7 @@
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(784, 560);
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.txtContrasenia);
             this.Controls.Add(this.label2);
