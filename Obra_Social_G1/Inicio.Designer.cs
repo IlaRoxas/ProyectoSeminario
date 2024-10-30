@@ -92,6 +92,7 @@
             this.bajaAfiliadoTool.Name = "bajaAfiliadoTool";
             this.bajaAfiliadoTool.Size = new System.Drawing.Size(187, 26);
             this.bajaAfiliadoTool.Text = "Eliminar ";
+            this.bajaAfiliadoTool.Click += new System.EventHandler(this.bajaAfiliadoTool_Click);
             // 
             // modificacionAfiliadoTool
             // 

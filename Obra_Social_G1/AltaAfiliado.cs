@@ -14,12 +14,12 @@ namespace Obra_Social_G1
 {
     public partial class frmAltaAfiliado : Form
     {
-        private Logica.Afiliado logicaAfiliado;
+        private Logica.AfiliadoLogica logicaAfiliado;
 
         public frmAltaAfiliado()
         {
             InitializeComponent();
-            logicaAfiliado= new Logica.Afiliado();
+            logicaAfiliado= new Logica.AfiliadoLogica();
         }
 
         private void btnAgregarAf_Click(object sender, EventArgs e)

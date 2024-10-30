@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Datos;
+using System;
+using System.Data;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
+using System.Runtime.InteropServices;
+using Entidades;
 namespace Logica
 {
-    public class Afiliado
+    public class AfiliadoLogica
     {
-        private Datos.Afiliado afiliadoDatos;
+        private AfiliadoRepositorio afiliadoDatos;
 
-        public Afiliado()
+        public AfiliadoLogica()
         {
-            afiliadoDatos = new Datos.Afiliado();
+            afiliadoDatos = new AfiliadoRepositorio();
         }
 
         public bool AgregarAfiliado(string nombre, string apellido, string telefono, string domicilio, string email, string numeroAfiliado, string creadoPor, out string mensaje)
@@ -66,6 +65,66 @@ namespace Logica
                 mensaje = $"Error al agregar afiliado: {ex.Message}";
                 return false;
 
+            }
+        }
+        // Método para dar de baja lógica a un afiliado
+        public bool DarDeBajaAfiliado(string numeroAfiliado, out string mensaje)
+        {
+            try
+            {
+                var afiliado = afiliadoDatos.ObtenerAfiliadoPorNumero(numeroAfiliado);
+                if (afiliado == null)
+                {
+                    mensaje = "El afiliado no existe en la base de datos.";
+                    return false;
+                }
+
+                if (afiliado.bajaLogica)
+                {
+                    mensaje = "El afiliado ya está dado de baja.";
+                    return false;
+                }
+
+                bool exito = afiliadoDatos.DarBajaLogica(numeroAfiliado);
+                if (exito)
+                {
+                    mensaje = "Afiliado dado de baja correctamente.";
+                    return true;
+                }
+                else
+                {
+                    mensaje = "No se pudo dar de baja el afiliado.";
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                mensaje = $"Error al dar de baja afiliado: {ex.Message}";
+                return false;
+            }
+        }
+
+        // Método para obtener un afiliado por su número de afiliado
+        public Afiliado ObtenerAfiliado(string numeroAfiliado, out string mensaje)
+        {
+            try
+            {
+                var afiliado = afiliadoDatos.ObtenerAfiliadoPorNumero(numeroAfiliado);
+                if (afiliado != null)
+                {
+                    mensaje = "Afiliado encontrado.";
+                    return afiliado;
+                }
+                else
+                {
+                    mensaje = "El afiliado no existe en la base de datos.";
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                mensaje = $"Error al obtener afiliado: {ex.Message}";
+                return null;
             }
         }
     }

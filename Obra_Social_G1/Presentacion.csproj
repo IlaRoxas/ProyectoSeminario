@@ -52,6 +52,12 @@
     <Compile Include="AltaAfiliado.Designer.cs">
       <DependentUpon>AltaAfiliado.cs</DependentUpon>
     </Compile>
+    <Compile Include="BajaAfiliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BajaAfiliado.Designer.cs">
+      <DependentUpon>BajaAfiliado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AltaAfiliado.resx">
       <DependentUpon>AltaAfiliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BajaAfiliado.resx">
+      <DependentUpon>BajaAfiliado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
@@ -98,6 +107,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{0b6042cc-a4c1-4380-9075-769594178070}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Infraestructura\Infraestructura.csproj">
       <Project>{b9caebe9-580a-4eaf-836c-c99abba4a660}</Project>
       <Name>Infraestructura</Name>

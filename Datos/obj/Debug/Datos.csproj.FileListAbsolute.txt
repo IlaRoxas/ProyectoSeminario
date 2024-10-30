@@ -38,3 +38,5 @@ C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Datos\bin\Deb
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Datos\obj\Debug\Datos.csproj.CopyComplete
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Datos\obj\Debug\Datos.dll
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Datos\obj\Debug\Datos.pdb
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Datos\bin\Debug\Entidades.dll
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Datos\bin\Debug\Entidades.pdb

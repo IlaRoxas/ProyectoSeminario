@@ -34,3 +34,5 @@ C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Logica\bin\De
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Logica\obj\Debug\Logica.csproj.CopyComplete
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Logica\obj\Debug\Logica.dll
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Logica\obj\Debug\Logica.pdb
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Logica\bin\Debug\Entidades.dll
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Logica\bin\Debug\Entidades.pdb
