@@ -7,6 +7,18 @@ namespace Datos
 {
     public class Usuario : Conexion
     {
+        /// <summary>
+        /// Intenta iniciar sesión con el usuario especificado utilizando el correo electrónico y la contraseña.
+        /// </summary>
+        /// <param name="email_usuario">El correo electrónico del usuario que intenta iniciar sesión.</param>
+        /// <param name="contrasenia">La contraseña del usuario que intenta iniciar sesión.</param>
+        /// <returns>
+        /// Un valor booleano que indica si el inicio de sesión fue exitoso (true) o no (false).
+        /// </returns>
+        /// <exception cref="DbConnectionException">
+        /// Se lanza cuando hay un error al intentar realizar el login, 
+        /// como problemas de conexión con la base de datos.
+        /// </exception>
         public bool Login(string email_usuario, string contrasenia)
         {
             bool loginExitoso = false;
@@ -36,9 +48,16 @@ namespace Datos
             return loginExitoso;
         }
 
-        /// <summary> 
-        /// Consulta si el usuario está bloqueado a través de su email
-        /// </summary> 
+        /// <summary>
+        /// Verifica si el usuario con el correo electrónico especificado está bloqueado.
+        /// </summary>
+        /// <param name="email_usuario">El correo electrónico del usuario cuya información se está consultando.</param>
+        /// <returns>
+        /// Devuelve true si el usuario está bloqueado; de lo contrario, devuelve false.
+        /// </returns>
+        /// <exception cref="MySqlException">
+        /// Se lanza cuando hay un error al intentar acceder a la base de datos.
+        /// </exception> 
         public bool EstaBloqueado(string email_usuario)
         {
             try
@@ -63,7 +82,17 @@ namespace Datos
                 return false;
             }
         }
-        // Método para obtener la cantidad de intentos fallidos
+
+        /// <summary>
+        /// Obtiene el número de intentos fallidos de inicio de sesión del usuario especificado.
+        /// </summary>
+        /// <param name="email_usuario">El correo electrónico del usuario cuyo número de intentos fallidos se desea consultar.</param>
+        /// <returns>
+        /// Devuelve el número de intentos fallidos de inicio de sesión del usuario.
+        /// </returns>
+        /// <exception cref="DbConnectionException">
+        /// Se lanza cuando hay un error al intentar acceder a la base de datos.
+        /// </exception>
         public int QintentosFallidosLogin(string email_usuario)
         {
             int intentosFallidos = 0;
@@ -87,7 +116,11 @@ namespace Datos
             }
             return intentosFallidos;
         }
-        // Método para incrementar los intentos fallidos
+
+        /// <summary>
+        /// Incrementa el contador de intentos fallidos de inicio de sesión para el usuario especificado.
+        /// </summary>
+        /// <param name="email_usuario">El correo electrónico del usuario cuyo contador de intentos fallidos se incrementará.</param>
         public void IncrementarIntentosFallidos(string email_usuario)
         {
             using (var conexion = GetConnection())
@@ -101,6 +134,11 @@ namespace Datos
                 }
             }
         }
+
+        /// <summary>
+        /// Restaura el contador de intentos fallidos de inicio de sesión a cero para el usuario especificado.
+        /// </summary>
+        /// <param name="email_usuario">El correo electrónico del usuario cuyo contador de intentos fallidos se restaurará a cero.</param>
         public void RestaurarQItntentosFallidos(string email_usuario)
         {
             using (var conexion = GetConnection())
@@ -114,7 +152,11 @@ namespace Datos
                 }
             }
         }
-        // Método para bloquear un usuario
+
+        /// <summary>
+        /// Bloquea al usuario especificado, impidiendo su inicio de sesión.
+        /// </summary>
+        /// <param name="email_usuario">El correo electrónico del usuario que se va a bloquear.</param>
         public void BloquearUsuario(string email_usuario)
         {
             using (var conexion = GetConnection())

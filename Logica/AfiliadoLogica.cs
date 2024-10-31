@@ -16,7 +16,21 @@ namespace Logica
         {
             afiliadoDatos = new AfiliadoRepositorio();
         }
-
+        /// <summary>
+        /// Agrega un nuevo afiliado a la base de datos después de validar los campos requeridos.
+        /// </summary>
+        /// <param name="nombre">El nombre del afiliado. Debe tener al menos 3 caracteres.</param>
+        /// <param name="apellido">El apellido del afiliado. Debe tener al menos 3 caracteres.</param>
+        /// <param name="telefono">El teléfono del afiliado. Debe contener solo números.</param>
+        /// <param name="domicilio">El domicilio del afiliado. Debe tener al menos 3 caracteres.</param>
+        /// <param name="email">El email del afiliado. Debe estar en formato válido (ejemplo: usuario@dominio.com).</param>
+        /// <param name="numeroAfiliado">El número de afiliado. Debe tener exactamente 12 dígitos numéricos.</param>
+        /// <param name="creadoPor">El usuario que crea el afiliado.</param>
+        /// <param name="mensaje">Mensaje de salida que indica el resultado de la operación, ya sea exitoso o con error.</param>
+        /// <returns>
+        /// Devuelve <c>true</c> si el afiliado se agregó correctamente; de lo contrario, <c>false</c>.
+        /// </returns>
+        /// <exception cref="Exception">Si ocurre un error al intentar agregar el afiliado en la base de datos.</exception>
         public bool AgregarAfiliado(string nombre, string apellido, string telefono, string domicilio, string email, string numeroAfiliado, string creadoPor, out string mensaje)
         {
             if (!ValidarCampos(nombre, apellido, telefono, domicilio, email, out mensaje))
@@ -42,7 +56,19 @@ namespace Logica
 
             }
         }
-        // Método para dar de baja lógica a un afiliado
+
+        /// <summary>
+        /// Realiza una baja lógica de un afiliado en la base de datos, verificando que el afiliado exista y no esté previamente dado de baja.
+        /// </summary>
+        /// <param name="numeroAfiliado">Número único que identifica al afiliado en la base de datos.</param>
+        /// <param name="mensaje">Mensaje de salida que indica el resultado de la operación, ya sea exitoso o con error.</param>
+        /// <returns>
+        /// Devuelve <c>true</c> si el afiliado se dio de baja correctamente; de lo contrario, <c>false</c>.
+        /// </returns>
+        /// <exception cref="Exception">Si ocurre un error al intentar dar de baja el afiliado en la base de datos.</exception>
+        /// <remarks>
+        /// La baja lógica no elimina el registro del afiliado de la base de datos, solo marca el campo correspondiente para indicar que ya no está activo.
+        /// </remarks>
         public bool DarDeBajaAfiliado(string numeroAfiliado, out string mensaje)
         {
             try
@@ -80,7 +106,18 @@ namespace Logica
             }
         }
 
-        // Método para obtener un afiliado por su número de afiliado para la baja lógica
+        /// <summary>
+        /// Obtiene un afiliado de la base de datos en función de su número de afiliado.
+        /// </summary>
+        /// <param name="numeroAfiliado">Número único que identifica al afiliado en la base de datos.</param>
+        /// <param name="mensaje">Mensaje de salida que indica el resultado de la operación, como "Afiliado encontrado" o detalles de cualquier error.</param>
+        /// <returns>
+        /// Una instancia de <see cref="Afiliado"/> si el afiliado existe en la base de datos; de lo contrario, <c>null</c>.
+        /// </returns>
+        /// <exception cref="Exception">Si ocurre un error al intentar obtener el afiliado de la base de datos.</exception>
+        /// <remarks>
+        /// Este método busca un afiliado específico en la base de datos a través de su número de afiliado. Si no existe, devuelve <c>null</c>.
+        /// </remarks>
         public Afiliado ObtenerAfiliado(string numeroAfiliado, out string mensaje)
         {
             try
@@ -103,7 +140,20 @@ namespace Logica
                 return null;
             }
         }
-        //Para visualizar los afiliados en el datagridview
+
+        /// <summary>
+        /// Obtiene todos los afiliados activos de la base de datos.
+        /// </summary>
+        /// <param name="mensaje">Mensaje de salida que indica el resultado de la operación. En caso de error, proporciona detalles del mismo.</param>
+        /// <returns>
+        /// Un objeto <see cref="DataTable"/> que contiene los datos de todos los afiliados activos. 
+        /// Retorna <c>null</c> si ocurre algún error.
+        /// </returns>
+        /// <exception cref="Exception">Si ocurre un error durante la obtención de los datos de los afiliados desde la base de datos.</exception>
+        /// <remarks>
+        /// Este método obtiene todos los afiliados activos (sin baja lógica) desde la capa de datos. 
+        /// En caso de error, el mensaje de salida incluirá los detalles del error.
+        /// </remarks>
         public DataTable ObtenerAfiliados(out string mensaje)
         {
             mensaje = string.Empty;
@@ -117,6 +167,26 @@ namespace Logica
                 return null;
             }
         }
+
+        /// <summary>
+        /// Actualiza los datos de un afiliado en la base de datos.
+        /// </summary>
+        /// <param name="numero_afiliado">Número único del afiliado que se actualizará.</param>
+        /// <param name="nombre">Nombre del afiliado.</param>
+        /// <param name="apellido">Apellido del afiliado.</param>
+        /// <param name="domicilio">Domicilio del afiliado.</param>
+        /// <param name="telefono">Número de teléfono del afiliado, que debe contener solo números.</param>
+        /// <param name="email">Correo electrónico del afiliado en un formato válido.</param>
+        /// <param name="mensaje">Mensaje de salida que indica el resultado de la operación. En caso de error, proporciona detalles del mismo.</param>
+        /// <returns>
+        /// Un valor <c>true</c> si la actualización se realiza con éxito; de lo contrario, <c>false</c>.
+        /// </returns>
+        /// <exception cref="Exception">Si ocurre un error durante la actualización del afiliado en la base de datos.</exception>
+        /// <remarks>
+        /// Este método valida los datos de entrada antes de intentar la actualización. 
+        /// Si los datos no son válidos, el método retorna <c>false</c> y establece un mensaje de error en el parámetro <paramref name="mensaje"/>.
+        /// En caso de éxito o error durante la actualización, el parámetro <paramref name="mensaje"/> se ajustará con un mensaje correspondiente.
+        /// </remarks>
         public bool ActualizarAfiliado(string numero_afiliado, string nombre, string apellido, string domicilio, string telefono, string email, out string mensaje)
         {
             if (!ValidarCampos(nombre, apellido, telefono, domicilio, email, out mensaje))
@@ -142,11 +212,40 @@ namespace Logica
                 return false;
             }
         }
+
+        /// <summary>
+        /// Obtiene una lista de todos los afiliados almacenados en la base de datos.
+        /// </summary>
+        /// <returns>
+        /// Una lista de objetos <see cref="Afiliado"/> que representa todos los afiliados registrados.
+        /// Si no existen afiliados, retorna una lista vacía.
+        /// </returns>
+        /// <exception cref="Exception">Si ocurre un error durante la obtención de los afiliados en la base de datos.</exception>
+        /// <remarks>
+        /// Este método interactúa con la capa de datos para obtener la lista completa de afiliados.
+        /// </remarks>
         public List<Afiliado> ObtenerTodosLosAfiliados()
         {
             return afiliadoDatos.ObtenerTodosLosAfiliados();
         }
-        // Método de validación común
+
+        /// <summary>
+        /// Valida los campos de un afiliado para asegurarse de que cumplan con los requisitos de formato y longitud.
+        /// </summary>
+        /// <param name="nombre">El nombre del afiliado, debe contener al menos 3 letras sin números ni espacios.</param>
+        /// <param name="apellido">El apellido del afiliado, debe contener al menos 3 letras sin números ni espacios.</param>
+        /// <param name="telefono">El número de teléfono del afiliado, debe contener solo dígitos.</param>
+        /// <param name="domicilio">El domicilio del afiliado, debe tener al menos 3 caracteres.</param>
+        /// <param name="email">La dirección de correo electrónico del afiliado, debe tener un formato válido (por ejemplo, usuario@dominio.com).</param>
+        /// <param name="mensaje">Salida que contiene el mensaje de error si alguno de los campos no es válido; vacío si todos los campos son válidos.</param>
+        /// <returns>
+        /// <c>true</c> si todos los campos son válidos; <c>false</c> si uno o más campos no cumplen con los requisitos.
+        /// </returns>
+        /// <remarks>
+        /// Este método verifica que los campos de texto no estén vacíos y que sigan el formato especificado
+        /// utilizando expresiones regulares para los campos <paramref name="nombre"/>, <paramref name="apellido"/>,
+        /// <paramref name="telefono"/> y <paramref name="email"/>.
+        /// </remarks>
         private bool ValidarCampos(string nombre, string apellido, string telefono, string domicilio, string email, out string mensaje)
         {
             if (string.IsNullOrEmpty(nombre) || !Regex.IsMatch(nombre, @"^[a-zA-Z]{3,}$"))

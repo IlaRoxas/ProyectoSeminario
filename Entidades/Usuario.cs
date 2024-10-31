@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Clase que representa a un usuario en el sistema.
+    /// Contiene información personal y de autenticación del usuario,
+    /// así como detalles sobre su estado de acceso.
+    /// </summary>
     public class Usuario
     {
             public string email_usuario { get; }
@@ -15,21 +20,6 @@ namespace Entidades
             public int intentos_fallidos { get; set; }
             public bool bloqueado { get; set; }
             public DateTime? fecha_bloqueo { get; set; }
-        
-        /*
-            public int IdUsuario { get; }
-            public DateTime FechaAlta { get; set; }
-            public string NombreUsuario { get; set; }
-            public string Password { get; set; }
-            public int IdPersona { get; set; }
-            public DateTime FechaCaducidadPassword { get; set; }
-            public DateTime? FechaBaja { get; set; }
-            public bool FlagBloqueado { get; set; }
-            public int QIntentosFallidosLogin { get; set; }
-            public bool FlagBajaLogica { get; set; }
-
-            public Roles Rol { get; set; }
-        */
 
     }
 }

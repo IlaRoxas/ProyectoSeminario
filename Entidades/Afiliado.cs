@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public  class Afiliado
+    /// <summary>
+    /// Clase que representa a un afiliado en el sistema.
+    /// Contiene información personal y de contacto del afiliado,
+    /// así como detalles sobre su estado en el sistema.
+    /// </summary>
+    public class Afiliado
     {
         public string numero_afiliado{ get; set;  }
         public string nombre { get; set; }

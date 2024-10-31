@@ -11,6 +11,15 @@ namespace Logica
             usuario = new Datos.Usuario();
         }
 
+        /// <summary>
+        /// Inicia sesión de un usuario utilizando su email y contraseña.
+        /// </summary>
+        /// <param name="email_usuario">El email del usuario.</param>
+        /// <param name="contrasenia">La contraseña del usuario.</param>
+        /// <param name="mensaje">Un mensaje que indica el resultado de la operación.</param>
+        /// <returns>true si el inicio de sesión fue exitoso; de lo contrario, false.</returns>
+        /// <exception cref="DbConnectionException">Se lanza si hay un error de conexión a la base de datos.</exception>
+        /// <exception cref="Exception">Se lanza si ocurre un error desconocido durante la operación.</exception>
         public bool Login(string email_usuario, string contrasenia, out string mensaje)
         {
             // Validar campos vacíos

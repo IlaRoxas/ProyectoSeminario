@@ -15,12 +15,26 @@ namespace Obra_Social_G1
     {
         private AfiliadoLogica afiliadoLogica;
 
+        /// <summary>
+        /// Constructor de la clase <see cref="ModificacionAfiliado"/>.
+        /// Inicializa los componentes de la interfaz y crea una nueva instancia de la clase <see cref="AfiliadoLogica"/>.
+        /// </summary>
         public ModificacionAfiliado()
         {
             InitializeComponent();
             afiliadoLogica = new AfiliadoLogica();
         }
 
+        /// <summary>
+        /// Evento que se ejecuta al cargar el formulario de modificación de afiliado.
+        /// Carga la lista de afiliados en el control de DataGridView para su visualización.
+        /// </summary>
+        /// <param name="sender">El objeto que disparó el evento.</param>
+        /// <param name="e">Los datos del evento.</param>
+        /// <remarks>
+        /// Este método utiliza la capa de lógica para obtener la lista de afiliados activos y mostrarla en un control `DataGridView`.
+        /// En caso de error al cargar los datos, muestra un mensaje de error.
+        /// </remarks>
         private void ModificacionAfiliado_Load(object sender, EventArgs e)
         {
             string mensaje;
@@ -36,6 +50,16 @@ namespace Obra_Social_G1
             }
         }
 
+        /// <summary>
+        /// Evento que se ejecuta cuando se cambia la selección de filas en el control DataGridView de afiliados.
+        /// Actualiza los campos de texto con los datos del afiliado seleccionado.
+        /// </summary>
+        /// <param name="sender">El objeto que disparó el evento.</param>
+        /// <param name="e">Los datos del evento.</param>
+        /// <remarks>
+        /// Este método utiliza los valores de la fila actualmente seleccionada en el `DataGridView`
+        /// y los asigna a los controles de texto correspondientes para su visualización o edición.
+        /// </remarks>
         private void dgvListaAfiliados_SelectionChanged(object sender, EventArgs e)
         {
             txtNroAf.Text = Convert.ToString(dgvListaAfiliados.CurrentRow.Cells["numero_afiliado"].Value);
@@ -46,6 +70,18 @@ namespace Obra_Social_G1
             txtEmail.Text = Convert.ToString(dgvListaAfiliados.CurrentRow.Cells["email"].Value);
         }
 
+        /// <summary>
+        /// Evento que se ejecuta al hacer clic en el botón de modificación de afiliado. 
+        /// Actualiza los datos del afiliado seleccionado con la información ingresada en los campos de texto.
+        /// </summary>
+        /// <param name="sender">El objeto que disparó el evento.</param>
+        /// <param name="e">Los datos del evento.</param>
+        /// <remarks>
+        /// Este método llama al método `ActualizarAfiliado` en la capa de lógica de afiliados,
+        /// utilizando los valores de los campos de texto. Si la actualización es exitosa,
+        /// muestra un mensaje de confirmación y recarga los datos en el `DataGridView` para reflejar los cambios.
+        /// En caso de error, muestra un mensaje de error con la razón correspondiente.
+        /// </remarks>
         private void btnModificarAf_Click(object sender, EventArgs e)
         {
             string mensaje;
@@ -70,6 +106,18 @@ namespace Obra_Social_G1
             }
            
         }
+
+        /// <summary>
+        /// Carga la lista de afiliados en el control DataGridView.
+        /// Obtiene todos los afiliados de la base de datos y los asigna como fuente de datos
+        /// del DataGridView, ocultando las columnas innecesarias para la visualización.
+        /// </summary>
+        /// <remarks>
+        /// Este método llama al método `ObtenerTodosLosAfiliados` en la capa de lógica de afiliados,
+        /// que recupera una lista de objetos `Afiliado`. Luego, establece esta lista como la fuente de datos
+        /// del DataGridView `dgvListaAfiliados`. También oculta las columnas que no son relevantes para el usuario,
+        /// como `creado_por`, `creado_el`, `eliminado_el`, `actualizado_el` y `bajaLogica`.
+        /// </remarks>
         private void CargarDatosAfiliados()
         {
             List<Afiliado> afiliados = afiliadoLogica.ObtenerTodosLosAfiliados(); // Este método debe obtener todos los afiliados de la base de datos.
