@@ -74,6 +74,16 @@ namespace Obra_Social_G1
         {
             List<Afiliado> afiliados = afiliadoLogica.ObtenerTodosLosAfiliados(); // Este método debe obtener todos los afiliados de la base de datos.
             dgvListaAfiliados.DataSource = afiliados;
+            dgvListaAfiliados.Columns["creado_por"].Visible = false;
+            dgvListaAfiliados.Columns["creado_el"].Visible = false;
+            dgvListaAfiliados.Columns["eliminado_el"].Visible = false;
+            dgvListaAfiliados.Columns["actualizado_el"].Visible = false;
+            dgvListaAfiliados.Columns["bajaLogica"].Visible = false;
+        }
+
+        private void btnCancelarAf_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
