@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AfiliadoRepositorio.cs" />
+    <Compile Include="ClinicaRepositorio.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="DbConnectionException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

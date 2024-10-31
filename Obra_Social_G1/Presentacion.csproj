@@ -52,6 +52,12 @@
     <Compile Include="AltaAfiliado.Designer.cs">
       <DependentUpon>AltaAfiliado.cs</DependentUpon>
     </Compile>
+    <Compile Include="AltaClinica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaClinica.Designer.cs">
+      <DependentUpon>AltaClinica.cs</DependentUpon>
+    </Compile>
     <Compile Include="BajaAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AltaAfiliado.resx">
       <DependentUpon>AltaAfiliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltaClinica.resx">
+      <DependentUpon>AltaClinica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BajaAfiliado.resx">
       <DependentUpon>BajaAfiliado.cs</DependentUpon>
