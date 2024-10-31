@@ -101,6 +101,7 @@
             this.modificacionAfiliadoTool.Name = "modificacionAfiliadoTool";
             this.modificacionAfiliadoTool.Size = new System.Drawing.Size(187, 26);
             this.modificacionAfiliadoTool.Text = "Modificar";
+            this.modificacionAfiliadoTool.Click += new System.EventHandler(this.modificacionAfiliadoTool_Click);
             // 
             // listarAfiliadosTool
             // 

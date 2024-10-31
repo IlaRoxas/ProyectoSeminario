@@ -45,6 +45,7 @@ namespace Obra_Social_G1
                     if (afiliadoLogica.DarDeBajaAfiliado(numeroAfiliado, out mensaje))
                     {
                         MessageBox.Show("Afiliado dado de baja correctamente.", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarTextBoxes();
                     }
                     else
                     {
@@ -55,6 +56,16 @@ namespace Obra_Social_G1
             else
             {
                 MessageBox.Show(mensaje, "Afiliado no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void LimpiarTextBoxes()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    ((TextBox)control).Text = string.Empty;
+                }
             }
         }
     }

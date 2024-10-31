@@ -29,5 +29,11 @@ namespace Obra_Social_G1
             BajaAfiliado frmBaja = new BajaAfiliado();
             frmBaja.Show();
         }
+
+        private void modificacionAfiliadoTool_Click(object sender, EventArgs e)
+        {
+            ModificacionAfiliado frmModifAf = new ModificacionAfiliado();
+            frmModifAf.Show();
+        }
     }
 }

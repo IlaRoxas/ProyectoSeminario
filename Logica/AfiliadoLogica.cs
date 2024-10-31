@@ -4,6 +4,8 @@ using System.Data;
 using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
 using Entidades;
+using System.Collections.Generic;
+
 namespace Logica
 {
     public class AfiliadoLogica
@@ -89,6 +91,7 @@ namespace Logica
                 if (exito)
                 {
                     mensaje = "Afiliado dado de baja correctamente.";
+
                     return true;
                 }
                 else
@@ -104,7 +107,7 @@ namespace Logica
             }
         }
 
-        // Método para obtener un afiliado por su número de afiliado
+        // Método para obtener un afiliado por su número de afiliado para la baja lógica
         public Afiliado ObtenerAfiliado(string numeroAfiliado, out string mensaje)
         {
             try
@@ -127,6 +130,48 @@ namespace Logica
                 return null;
             }
         }
+        //Para visualizar los afiliados en el datagridview
+        public DataTable ObtenerAfiliados(out string mensaje)
+        {
+            mensaje = string.Empty;
+            try
+            {
+                return afiliadoDatos.ObtenerTodosAfiliados();
+            }
+            catch (Exception ex)
+            {
+                mensaje = $"Error al obtener afiliados: {ex.Message}";
+                return null;
+            }
+        }
+        public bool ActualizarAfiliado(string numero_afiliado, string nombre, string apellido, string telefono, string domicilio, string email, out string mensaje)
+        {
+            mensaje = string.Empty;
+            try
+            {
+                bool resultado = afiliadoDatos.ActualizarAfiliado(numero_afiliado, nombre, apellido, telefono, domicilio, email);
+                if (resultado)
+                {
+                    mensaje = "Afiliado actualizado correctamente.";
+                }
+                else
+                {
+                    mensaje = "No se pudo actualizar el afiliado.";
+                }
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                mensaje = $"Error al actualizar afiliado: {ex.Message}";
+                return false;
+            }
+        }
+        public List<Afiliado> ObtenerTodosLosAfiliados()
+        {
+            return afiliadoDatos.ObtenerTodosLosAfiliados();
+        }
+
+
     }
 
 }
