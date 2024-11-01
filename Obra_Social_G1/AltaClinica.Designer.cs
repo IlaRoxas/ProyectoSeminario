@@ -56,30 +56,32 @@
             // btnCancelarCl
             // 
             this.btnCancelarCl.AutoSize = true;
-            this.btnCancelarCl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCancelarCl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnCancelarCl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCancelarCl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelarCl.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarCl.Location = new System.Drawing.Point(341, 451);
+            this.btnCancelarCl.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarCl.ForeColor = System.Drawing.Color.Lavender;
+            this.btnCancelarCl.Location = new System.Drawing.Point(395, 451);
             this.btnCancelarCl.Name = "btnCancelarCl";
-            this.btnCancelarCl.Size = new System.Drawing.Size(180, 42);
-            this.btnCancelarCl.TabIndex = 29;
-            this.btnCancelarCl.Text = "Cancelar";
+            this.btnCancelarCl.Size = new System.Drawing.Size(126, 42);
+            this.btnCancelarCl.TabIndex = 6;
+            this.btnCancelarCl.Text = "CANCELAR";
             this.btnCancelarCl.UseVisualStyleBackColor = false;
             this.btnCancelarCl.Click += new System.EventHandler(this.btnCancelarCl_Click);
             // 
             // btnAgregarCl
             // 
             this.btnAgregarCl.AutoSize = true;
-            this.btnAgregarCl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnAgregarCl.BackColor = System.Drawing.Color.DarkGreen;
             this.btnAgregarCl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAgregarCl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarCl.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCl.Location = new System.Drawing.Point(542, 451);
+            this.btnAgregarCl.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCl.ForeColor = System.Drawing.Color.Lavender;
+            this.btnAgregarCl.Location = new System.Drawing.Point(532, 451);
             this.btnAgregarCl.Name = "btnAgregarCl";
             this.btnAgregarCl.Size = new System.Drawing.Size(180, 42);
-            this.btnAgregarCl.TabIndex = 28;
-            this.btnAgregarCl.Text = "Agregar";
+            this.btnAgregarCl.TabIndex = 5;
+            this.btnAgregarCl.Text = "AGREGAR";
             this.btnAgregarCl.UseVisualStyleBackColor = false;
             this.btnAgregarCl.Click += new System.EventHandler(this.btnAgregarCl_Click);
             // 
@@ -89,7 +91,7 @@
             this.txtTelefonoCl.Location = new System.Drawing.Point(230, 159);
             this.txtTelefonoCl.Name = "txtTelefonoCl";
             this.txtTelefonoCl.Size = new System.Drawing.Size(445, 29);
-            this.txtTelefonoCl.TabIndex = 24;
+            this.txtTelefonoCl.TabIndex = 3;
             // 
             // txtDireccionCl
             // 
@@ -97,7 +99,7 @@
             this.txtDireccionCl.Location = new System.Drawing.Point(230, 114);
             this.txtDireccionCl.Name = "txtDireccionCl";
             this.txtDireccionCl.Size = new System.Drawing.Size(445, 29);
-            this.txtDireccionCl.TabIndex = 23;
+            this.txtDireccionCl.TabIndex = 2;
             // 
             // txtRazonSocial
             // 
@@ -105,7 +107,7 @@
             this.txtRazonSocial.Location = new System.Drawing.Point(230, 68);
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(445, 29);
-            this.txtRazonSocial.TabIndex = 22;
+            this.txtRazonSocial.TabIndex = 1;
             // 
             // lblTipoClinica
             // 
@@ -153,20 +155,23 @@
             // 
             // cbTipoClinica
             // 
+            this.cbTipoClinica.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cbTipoClinica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoClinica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoClinica.FormattingEnabled = true;
             this.cbTipoClinica.Items.AddRange(new object[] {
-            "Clínica general",
-            "Clínica dental",
-            "Clínica pediátrica",
-            "Clínica oftalmológica",
-            "Clínica ginecológica",
-            "Clínica dermatológica",
-            "Clínica de rehabilitación"});
+            "Clinica general",
+            "Clinica dental",
+            "Clinica pediatrica",
+            "Clinica oftalmologica",
+            "Clinica ginecologica",
+            "Clinica dermatologica",
+            "Clinica de rehabilitacion"});
             this.cbTipoClinica.Location = new System.Drawing.Point(230, 204);
             this.cbTipoClinica.Name = "cbTipoClinica";
             this.cbTipoClinica.Size = new System.Drawing.Size(445, 32);
-            this.cbTipoClinica.TabIndex = 34;
+            this.cbTipoClinica.TabIndex = 4;
+            this.cbTipoClinica.SelectedIndexChanged += new System.EventHandler(this.cbTipoClinica_SelectedIndexChanged);
             // 
             // FrmAltaClinica
             // 

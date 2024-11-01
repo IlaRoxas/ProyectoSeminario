@@ -56,5 +56,11 @@ namespace Obra_Social_G1
             FrmAltaClinica frmAltaClinica= new FrmAltaClinica();
             frmAltaClinica.Show();
         }
+
+        private void modificacionClinicaTool_Click(object sender, EventArgs e)
+        {
+            ModificacionClinica frmModifCl = new ModificacionClinica();
+            frmModifCl.Show();
+        }
     }
 }

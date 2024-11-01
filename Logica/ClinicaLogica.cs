@@ -1,6 +1,8 @@
 ﻿using Datos;
+using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -38,7 +40,7 @@ namespace Logica
         }
         private bool ValidarCampos(string razonSocial, string direccion, string telefono, string tipoClinica, out string mensaje)
         {
-            if (string.IsNullOrEmpty(razonSocial) || !Regex.IsMatch(razonSocial, @"^[a-zA-Z\s]{3,}$"))
+            if (string.IsNullOrEmpty(razonSocial) || razonSocial.Length < 3)
             {
                 mensaje = "La razón Social debe tener al menos 3 letras";
                 return false;
@@ -61,6 +63,48 @@ namespace Logica
 
             mensaje = string.Empty; // No hay errores
             return true;
+        }
+        public DataTable ObtenerClinicas(out string mensaje)
+        {
+            mensaje = string.Empty;
+            try
+            {
+                return clinicaDatos.ObtenerTodasClinicas();
+            }
+            catch (Exception ex)
+            {
+                mensaje = $"Error al obtener clíncas: {ex.Message}";
+                return null;
+            }
+        }
+        public bool ActualizarClinica(string razon_social, string direccion, string telefono, string tipo_clinica, out string mensaje)
+        {
+            if (!ValidarCampos(razon_social, direccion, telefono, tipo_clinica, out mensaje))
+            {
+                return false;
+            }
+            try
+            {
+                bool resultado = clinicaDatos.ActualizarClinica(razon_social, direccion, telefono, tipo_clinica);
+                if (resultado)
+                {
+                    mensaje = "Clínica actualizada correctamente.";
+                }
+                else
+                {
+                    mensaje = "No se pudo actualizar la clínica.";
+                }
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                mensaje = $"Error al actualizar la clínica: {ex.Message}";
+                return false;
+            }
+        }
+        public List<Clinica> ObtenerTodasLasClinicas()
+        {
+            return clinicaDatos.ObtenerTodasLasClinicas();
         }
     }
 }

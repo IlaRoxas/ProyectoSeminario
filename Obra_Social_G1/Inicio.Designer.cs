@@ -171,6 +171,7 @@
             this.modificacionClinicaTool.Name = "modificacionClinicaTool";
             this.modificacionClinicaTool.Size = new System.Drawing.Size(180, 26);
             this.modificacionClinicaTool.Text = "Modificar ";
+            this.modificacionClinicaTool.Click += new System.EventHandler(this.modificacionClinicaTool_Click);
             // 
             // salirTSMI
             // 

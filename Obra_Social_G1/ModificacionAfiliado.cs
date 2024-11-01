@@ -133,5 +133,7 @@ namespace Obra_Social_G1
         {
             Close();
         }
+
+       
     }
 }

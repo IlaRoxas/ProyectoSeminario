@@ -64,5 +64,11 @@ namespace Obra_Social_G1
         {
             Close();
         }
+
+        private void cbTipoClinica_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //No se cambia el contenido del combobox
+            cbTipoClinica.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
     }
 }

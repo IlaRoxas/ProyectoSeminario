@@ -51,3 +51,4 @@ C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\bin\Debug\Entidades.pdb
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.ModificacionAfiliado.resources
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.FrmAltaClinica.resources
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.ModificacionClinica.resources

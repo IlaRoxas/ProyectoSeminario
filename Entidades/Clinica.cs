@@ -8,13 +8,14 @@ namespace Entidades
 {
     public class Clinica
     {
-        public string razon_social { get; }
-        public string tipo_clinica { get; set; }
+        public string razon_social { get; set; }
         public string direccion { get; set; }
-        public int telefono { get; set; }
+        public string telefono { get; set; }
+        public string tipo_clinica { get; set; }
         public DateTime? creada_el { get; set; }
         public DateTime? actualizada_el { get; set; }
         public DateTime? eliminada_el { get; set; }
+        public bool bajaLogica { get; set; }
         public Usuario creada_por { get; set; }
   
     }
