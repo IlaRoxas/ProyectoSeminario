@@ -2,12 +2,7 @@
 using Logica;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Obra_Social_G1
@@ -75,6 +70,19 @@ namespace Obra_Social_G1
             dgvListaClinicas.Columns["eliminada_el"].Visible = false;
             dgvListaClinicas.Columns["actualizada_el"].Visible = false;
             dgvListaClinicas.Columns["bajaLogica"].Visible = false;
+        }
+
+        private void btnBuscarGral_Click(object sender, EventArgs e)
+        {
+            string razonSocial = txtBuscarRS.Text.Trim();
+            string tipoClinica = txtBuscarTP.Text.Trim();
+            DataTable dt = logicaClinica.ObtenerClinicasFiltradas(razonSocial, tipoClinica);
+            dgvListaClinicas.DataSource= dt;
+        }
+
+        private void btnCancelarCl_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

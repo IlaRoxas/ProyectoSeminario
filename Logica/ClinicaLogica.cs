@@ -106,5 +106,9 @@ namespace Logica
         {
             return clinicaDatos.ObtenerTodasLasClinicas();
         }
+        public DataTable ObtenerClinicasFiltradas(string razonSocial, string tipoClinica)
+        {
+            return clinicaDatos.ObtenerClinicas(razonSocial, tipoClinica);
+        }
     }
 }

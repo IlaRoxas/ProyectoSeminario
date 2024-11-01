@@ -93,6 +93,48 @@ namespace Datos
             return clinicas;
         }
 
+        public DataTable ObtenerClinicas(string razonSocial, string tipoClinica)
+        {
+            string query = "SELECT razon_social, direccion, telefono, tipo_clinica FROM clinica";
+            List<string> condiciones = new List<string>();
+
+            if (!string.IsNullOrEmpty(razonSocial))
+            {
+                condiciones.Add("razon_social LIKE @razonSocial");
+            }
+
+            if (!string.IsNullOrEmpty(tipoClinica))
+            {
+                condiciones.Add("tipo_clinica LIKE @tipoClinica");
+            }
+
+            if (condiciones.Count > 0)
+            {
+                query += " WHERE " + string.Join(" OR ", condiciones);
+            }
+
+            using (MySqlConnection conn = GetConnection())
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    if (!string.IsNullOrEmpty(razonSocial))
+                    {
+                        cmd.Parameters.AddWithValue("@razonSocial", "%" + razonSocial + "%");
+                    }
+
+                    if (!string.IsNullOrEmpty(tipoClinica))
+                    {
+                        cmd.Parameters.AddWithValue("@tipoClinica", "%" + tipoClinica + "%");
+                    }
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
 
     }
 }

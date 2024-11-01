@@ -98,7 +98,6 @@
             // 
             // txtBuscarTP
             // 
-            this.txtBuscarTP.Enabled = false;
             this.txtBuscarTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarTP.Location = new System.Drawing.Point(169, 47);
             this.txtBuscarTP.Name = "txtBuscarTP";
@@ -116,6 +115,7 @@
             this.btnBuscarGral.TabIndex = 33;
             this.btnBuscarGral.Text = "Buscar";
             this.btnBuscarGral.UseVisualStyleBackColor = false;
+            this.btnBuscarGral.Click += new System.EventHandler(this.btnBuscarGral_Click);
             // 
             // pnlBuscador
             // 
@@ -132,9 +132,9 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Navy;
+            this.label8.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label8.Location = new System.Drawing.Point(285, 98);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 17);
@@ -144,9 +144,9 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Navy;
+            this.label9.BackColor = System.Drawing.SystemColors.Control;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.Location = new System.Drawing.Point(5, 97);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(124, 17);
@@ -177,6 +177,7 @@
             this.btnCancelarCl.TabIndex = 8;
             this.btnCancelarCl.Text = "CANCELAR";
             this.btnCancelarCl.UseVisualStyleBackColor = false;
+            this.btnCancelarCl.Click += new System.EventHandler(this.btnCancelarCl_Click);
             // 
             // label3
             // 
