@@ -112,7 +112,7 @@
             this.btnBuscarGral.Location = new System.Drawing.Point(382, 24);
             this.btnBuscarGral.Name = "btnBuscarGral";
             this.btnBuscarGral.Size = new System.Drawing.Size(103, 29);
-            this.btnBuscarGral.TabIndex = 33;
+            this.btnBuscarGral.TabIndex = 3;
             this.btnBuscarGral.Text = "Buscar";
             this.btnBuscarGral.UseVisualStyleBackColor = false;
             this.btnBuscarGral.Click += new System.EventHandler(this.btnBuscarGral_Click);
@@ -161,7 +161,7 @@
             this.btnModificarCl.Location = new System.Drawing.Point(114, 186);
             this.btnModificarCl.Name = "btnModificarCl";
             this.btnModificarCl.Size = new System.Drawing.Size(147, 37);
-            this.btnModificarCl.TabIndex = 7;
+            this.btnModificarCl.TabIndex = 8;
             this.btnModificarCl.Text = "MODIFICAR";
             this.btnModificarCl.UseVisualStyleBackColor = false;
             this.btnModificarCl.Click += new System.EventHandler(this.btnModificarCl_Click);
@@ -174,7 +174,7 @@
             this.btnCancelarCl.Location = new System.Drawing.Point(4, 186);
             this.btnCancelarCl.Name = "btnCancelarCl";
             this.btnCancelarCl.Size = new System.Drawing.Size(108, 37);
-            this.btnCancelarCl.TabIndex = 8;
+            this.btnCancelarCl.TabIndex = 9;
             this.btnCancelarCl.Text = "CANCELAR";
             this.btnCancelarCl.UseVisualStyleBackColor = false;
             this.btnCancelarCl.Click += new System.EventHandler(this.btnCancelarCl_Click);
@@ -233,7 +233,7 @@
             this.txtTelefonoCl.Location = new System.Drawing.Point(116, 89);
             this.txtTelefonoCl.Name = "txtTelefonoCl";
             this.txtTelefonoCl.Size = new System.Drawing.Size(147, 26);
-            this.txtTelefonoCl.TabIndex = 5;
+            this.txtTelefonoCl.TabIndex = 6;
             // 
             // txtDireccionCl
             // 
@@ -241,7 +241,7 @@
             this.txtDireccionCl.Location = new System.Drawing.Point(116, 52);
             this.txtDireccionCl.Name = "txtDireccionCl";
             this.txtDireccionCl.Size = new System.Drawing.Size(147, 26);
-            this.txtDireccionCl.TabIndex = 4;
+            this.txtDireccionCl.TabIndex = 5;
             // 
             // txtRazonSocialCl
             // 
@@ -250,7 +250,7 @@
             this.txtRazonSocialCl.Location = new System.Drawing.Point(116, 16);
             this.txtRazonSocialCl.Name = "txtRazonSocialCl";
             this.txtRazonSocialCl.Size = new System.Drawing.Size(147, 26);
-            this.txtRazonSocialCl.TabIndex = 3;
+            this.txtRazonSocialCl.TabIndex = 4;
             // 
             // pnlSeleccion
             // 
@@ -285,7 +285,7 @@
             this.cbTipoClinica.Location = new System.Drawing.Point(121, 242);
             this.cbTipoClinica.Name = "cbTipoClinica";
             this.cbTipoClinica.Size = new System.Drawing.Size(145, 28);
-            this.cbTipoClinica.TabIndex = 28;
+            this.cbTipoClinica.TabIndex = 7;
             // 
             // ModificacionClinica
             // 

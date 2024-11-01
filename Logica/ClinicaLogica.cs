@@ -110,5 +110,63 @@ namespace Logica
         {
             return clinicaDatos.ObtenerClinicas(razonSocial, tipoClinica);
         }
+        public Clinica ObtenerClinica(string razon_social, out string mensaje)
+        {
+            try
+            {
+                var clinica = clinicaDatos.ObtenerClinicaPorRS(razon_social);
+                if (clinica != null)
+                {
+                    mensaje = "Clínica encontrada.";
+                    return clinica;
+                }
+                else
+                {
+                    mensaje = "La clínica no existe en la base de datos.";
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                mensaje = $"Error al obtener clínica: {ex.Message}";
+                return null;
+            }
+        }
+        public bool DarDeBajaClinica(string razon_social, out string mensaje)
+        {
+            try
+            {
+                var clinica = clinicaDatos.ObtenerClinicaPorRS(razon_social);
+                if (clinica == null)
+                {
+                    mensaje = "La clinica no existe en la base de datos.";
+                    return false;
+                }
+
+                if (clinica.bajaLogica)
+                {
+                    mensaje = "La clinica ya está dado de baja.";
+                    return false;
+                }
+
+                bool exito = clinicaDatos.DarBajaLogica(razon_social);
+                if (exito)
+                {
+                    mensaje = "Clínica dada de baja correctamente.";
+
+                    return true;
+                }
+                else
+                {
+                    mensaje = "No se pudo dar de baja la clínica.";
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                mensaje = $"Error al dar de baja a la clínica: {ex.Message}";
+                return false;
+            }
+        }
     }
 }

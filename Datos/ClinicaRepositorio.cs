@@ -134,7 +134,54 @@ namespace Datos
                 }
             }
         }
+        public Clinica ObtenerClinicaPorRS(string razon_social)
+        {
+            Clinica clinica = null;
 
+            using (var conexion = GetConnection())
+            {
+                string query = "SELECT razon_social, direccion, telefono, tipo_clinica, bajaLogica FROM clinica WHERE razon_social = @razon_social";
+                using (var cmd = new MySqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@razon_social", razon_social);
 
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            clinica = new Clinica
+                            {
+                                razon_social = reader["razon_social"].ToString(),
+                                direccion = reader["direccion"].ToString(),
+                                telefono = reader["telefono"].ToString(),
+                                tipo_clinica = reader["tipo_clinica"].ToString(),
+                                bajaLogica = Convert.ToBoolean(reader["bajaLogica"])
+                            };
+                        }
+                        else
+                        {
+                            return null; // No se encontró ninguna clinica con esa razon social
+                        }
+                    }
+                }
+            }
+
+            return clinica;
+        }
+
+        public bool DarBajaLogica(string razon_social)
+        {
+            using (var conexion = GetConnection())
+            {
+                string query = "UPDATE clinica SET bajaLogica = 1, eliminada_el = @eliminada_el WHERE razon_social = @razon_social";
+                using (var cmd = new MySqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@razon_social", razon_social);
+                    cmd.Parameters.AddWithValue("@eliminada_el", DateTime.Now);
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+            }
+        }
     }
 }

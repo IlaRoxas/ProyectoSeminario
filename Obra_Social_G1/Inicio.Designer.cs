@@ -77,7 +77,7 @@
             this.altaAfiliadoTool.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.altaAfiliadoTool.Image = ((System.Drawing.Image)(resources.GetObject("altaAfiliadoTool.Image")));
             this.altaAfiliadoTool.Name = "altaAfiliadoTool";
-            this.altaAfiliadoTool.Size = new System.Drawing.Size(180, 26);
+            this.altaAfiliadoTool.Size = new System.Drawing.Size(149, 26);
             this.altaAfiliadoTool.Text = "Agregar ";
             this.altaAfiliadoTool.Click += new System.EventHandler(this.altaAfiliadoTool_Click);
             // 
@@ -86,7 +86,7 @@
             this.bajaAfiliadoTool.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bajaAfiliadoTool.Image = ((System.Drawing.Image)(resources.GetObject("bajaAfiliadoTool.Image")));
             this.bajaAfiliadoTool.Name = "bajaAfiliadoTool";
-            this.bajaAfiliadoTool.Size = new System.Drawing.Size(180, 26);
+            this.bajaAfiliadoTool.Size = new System.Drawing.Size(149, 26);
             this.bajaAfiliadoTool.Text = "Eliminar ";
             this.bajaAfiliadoTool.Click += new System.EventHandler(this.bajaAfiliadoTool_Click);
             // 
@@ -95,7 +95,7 @@
             this.modificacionAfiliadoTool.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modificacionAfiliadoTool.Image = ((System.Drawing.Image)(resources.GetObject("modificacionAfiliadoTool.Image")));
             this.modificacionAfiliadoTool.Name = "modificacionAfiliadoTool";
-            this.modificacionAfiliadoTool.Size = new System.Drawing.Size(180, 26);
+            this.modificacionAfiliadoTool.Size = new System.Drawing.Size(149, 26);
             this.modificacionAfiliadoTool.Text = "Modificar";
             this.modificacionAfiliadoTool.Click += new System.EventHandler(this.modificacionAfiliadoTool_Click);
             // 
@@ -163,6 +163,7 @@
             this.bajaClinicaTool.Name = "bajaClinicaTool";
             this.bajaClinicaTool.Size = new System.Drawing.Size(180, 26);
             this.bajaClinicaTool.Text = "Eliminar";
+            this.bajaClinicaTool.Click += new System.EventHandler(this.bajaClinicaTool_Click);
             // 
             // modificacionClinicaTool
             // 

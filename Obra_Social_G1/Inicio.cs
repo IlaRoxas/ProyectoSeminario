@@ -62,5 +62,11 @@ namespace Obra_Social_G1
             ModificacionClinica frmModifCl = new ModificacionClinica();
             frmModifCl.Show();
         }
+
+        private void bajaClinicaTool_Click(object sender, EventArgs e)
+        {
+            BajaClinica frmBajaCl= new BajaClinica();
+            frmBajaCl.Show();
+        }
     }
 }

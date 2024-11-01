@@ -64,6 +64,12 @@
     <Compile Include="BajaAfiliado.Designer.cs">
       <DependentUpon>BajaAfiliado.cs</DependentUpon>
     </Compile>
+    <Compile Include="BajaClinica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BajaClinica.Designer.cs">
+      <DependentUpon>BajaClinica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BajaAfiliado.resx">
       <DependentUpon>BajaAfiliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BajaClinica.resx">
+      <DependentUpon>BajaClinica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
