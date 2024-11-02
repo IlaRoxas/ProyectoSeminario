@@ -30,6 +30,7 @@ namespace Datos
                 }
             }
         }
+
         public DataTable ObtenerTodasClinicas()
         {
             using (var conexion = GetConnection())
@@ -47,6 +48,7 @@ namespace Datos
                 }
             }
         }
+
         public bool ActualizarClinica(string razon_social, string direccion, string telefono, string tipo_clinica)
         {
             using (MySqlConnection conexion = GetConnection())
@@ -66,6 +68,7 @@ namespace Datos
                 }
             }
         }
+
         public List<Clinica> ObtenerTodasLasClinicas()
         {
             List<Clinica> clinicas = new List<Clinica>();
@@ -93,38 +96,38 @@ namespace Datos
             return clinicas;
         }
 
-        public DataTable ObtenerClinicas(string razonSocial, string tipoClinica)
+        public DataTable ObtenerClinicas(string razon_social, string tipo_clinica)
         {
-            string query = "SELECT razon_social, direccion, telefono, tipo_clinica FROM clinica";
+            string query = "SELECT razon_social, direccion, telefono, tipo_clinica FROM clinica WHERE bajaLogica = 0";
             List<string> condiciones = new List<string>();
 
-            if (!string.IsNullOrEmpty(razonSocial))
+            if (!string.IsNullOrEmpty(razon_social))
             {
-                condiciones.Add("razon_social LIKE @razonSocial");
+                condiciones.Add("razon_social LIKE @razon_social");
             }
 
-            if (!string.IsNullOrEmpty(tipoClinica))
+            if (!string.IsNullOrEmpty(tipo_clinica))
             {
-                condiciones.Add("tipo_clinica LIKE @tipoClinica");
+                condiciones.Add("tipo_clinica LIKE @tipo_clinica");
             }
 
             if (condiciones.Count > 0)
             {
-                query += " WHERE " + string.Join(" OR ", condiciones);
+                query += " AND " + string.Join(" OR ", condiciones);
             }
 
             using (MySqlConnection conn = GetConnection())
             {
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    if (!string.IsNullOrEmpty(razonSocial))
+                    if (!string.IsNullOrEmpty(razon_social))
                     {
-                        cmd.Parameters.AddWithValue("@razonSocial", "%" + razonSocial + "%");
+                        cmd.Parameters.AddWithValue("@razon_social", "%" + razon_social + "%");
                     }
 
-                    if (!string.IsNullOrEmpty(tipoClinica))
+                    if (!string.IsNullOrEmpty(tipo_clinica))
                     {
-                        cmd.Parameters.AddWithValue("@tipoClinica", "%" + tipoClinica + "%");
+                        cmd.Parameters.AddWithValue("@tipo_clinica", "%" + tipo_clinica + "%");
                     }
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -134,13 +137,14 @@ namespace Datos
                 }
             }
         }
+
         public Clinica ObtenerClinicaPorRS(string razon_social)
         {
             Clinica clinica = null;
 
             using (var conexion = GetConnection())
             {
-                string query = "SELECT razon_social, direccion, telefono, tipo_clinica, bajaLogica FROM clinica WHERE razon_social = @razon_social";
+                string query = "SELECT razon_social, direccion, telefono, tipo_clinica, bajaLogica FROM clinica WHERE razon_social = @razon_social AND bajaLogica = 0";
                 using (var cmd = new MySqlCommand(query, conexion))
                 {
                     cmd.Parameters.AddWithValue("@razon_social", razon_social);

@@ -277,6 +277,10 @@ namespace Logica
             mensaje = string.Empty; // No hay errores
             return true;
         }
+        public DataTable ObtenerAfiliadosFiltrados(string nombre)
+        {
+            return afiliadoDatos.ObtenerAfiliados(nombre);
+        }
     }
 
 }

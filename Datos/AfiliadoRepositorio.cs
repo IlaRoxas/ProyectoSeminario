@@ -235,6 +235,35 @@ namespace Datos
 
             return afiliados;
         }
+        public DataTable ObtenerAfiliados(string nombre)
+        {
+            string query = "SELECT numero_afiliado, nombre, apellido, domicilio, telefono, email FROM afiliado WHERE bajaLogica = 0";
 
+            if (!string.IsNullOrEmpty(nombre))
+            {
+                query += " AND (nombre LIKE @nombre OR apellido LIKE @nombre)";
+            }
+
+            using (MySqlConnection conn = GetConnection())
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    if (!string.IsNullOrEmpty(nombre))
+                    {
+                        cmd.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
+                    }
+
+                    if (!string.IsNullOrEmpty(nombre))
+                    {
+                        cmd.Parameters.AddWithValue("@apellido", "%" + nombre + "%");
+                    }
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    return dt;
+                }
+            }
+        }
     }
 }

@@ -43,6 +43,9 @@
             this.bajaClinicaTool = new System.Windows.Forms.ToolStripMenuItem();
             this.modificacionClinicaTool = new System.Windows.Forms.ToolStripMenuItem();
             this.salirTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,14 +65,18 @@
             // 
             // afiliadoTSMI
             // 
+            this.afiliadoTSMI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.afiliadoTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
             this.altaAfiliadoTool,
-            this.bajaAfiliadoTool,
-            this.modificacionAfiliadoTool});
+            this.modificacionAfiliadoTool,
+            this.bajaAfiliadoTool});
             this.afiliadoTSMI.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.afiliadoTSMI.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.afiliadoTSMI.Name = "afiliadoTSMI";
             this.afiliadoTSMI.Size = new System.Drawing.Size(107, 34);
             this.afiliadoTSMI.Text = "Afiliados";
+            this.afiliadoTSMI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // altaAfiliadoTool
             // 
@@ -77,7 +84,7 @@
             this.altaAfiliadoTool.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.altaAfiliadoTool.Image = ((System.Drawing.Image)(resources.GetObject("altaAfiliadoTool.Image")));
             this.altaAfiliadoTool.Name = "altaAfiliadoTool";
-            this.altaAfiliadoTool.Size = new System.Drawing.Size(149, 26);
+            this.altaAfiliadoTool.Size = new System.Drawing.Size(198, 26);
             this.altaAfiliadoTool.Text = "Agregar ";
             this.altaAfiliadoTool.Click += new System.EventHandler(this.altaAfiliadoTool_Click);
             // 
@@ -86,8 +93,8 @@
             this.bajaAfiliadoTool.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bajaAfiliadoTool.Image = ((System.Drawing.Image)(resources.GetObject("bajaAfiliadoTool.Image")));
             this.bajaAfiliadoTool.Name = "bajaAfiliadoTool";
-            this.bajaAfiliadoTool.Size = new System.Drawing.Size(149, 26);
-            this.bajaAfiliadoTool.Text = "Eliminar ";
+            this.bajaAfiliadoTool.Size = new System.Drawing.Size(198, 26);
+            this.bajaAfiliadoTool.Text = "Eliminar";
             this.bajaAfiliadoTool.Click += new System.EventHandler(this.bajaAfiliadoTool_Click);
             // 
             // modificacionAfiliadoTool
@@ -95,16 +102,17 @@
             this.modificacionAfiliadoTool.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modificacionAfiliadoTool.Image = ((System.Drawing.Image)(resources.GetObject("modificacionAfiliadoTool.Image")));
             this.modificacionAfiliadoTool.Name = "modificacionAfiliadoTool";
-            this.modificacionAfiliadoTool.Size = new System.Drawing.Size(149, 26);
+            this.modificacionAfiliadoTool.Size = new System.Drawing.Size(198, 26);
             this.modificacionAfiliadoTool.Text = "Modificar";
             this.modificacionAfiliadoTool.Click += new System.EventHandler(this.modificacionAfiliadoTool_Click);
             // 
             // medicoTSMI
             // 
             this.medicoTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modificacionMedicoTool,
             this.altaMedicoTool,
-            this.bajaMedicoTool,
-            this.modificacionMedicoTool});
+            this.toolStripMenuItem2,
+            this.bajaMedicoTool});
             this.medicoTSMI.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.medicoTSMI.Margin = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.medicoTSMI.Name = "medicoTSMI";
@@ -116,7 +124,7 @@
             this.altaMedicoTool.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.altaMedicoTool.Image = ((System.Drawing.Image)(resources.GetObject("altaMedicoTool.Image")));
             this.altaMedicoTool.Name = "altaMedicoTool";
-            this.altaMedicoTool.Size = new System.Drawing.Size(153, 26);
+            this.altaMedicoTool.Size = new System.Drawing.Size(198, 26);
             this.altaMedicoTool.Text = "Agregar";
             // 
             // bajaMedicoTool
@@ -124,7 +132,7 @@
             this.bajaMedicoTool.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bajaMedicoTool.Image = ((System.Drawing.Image)(resources.GetObject("bajaMedicoTool.Image")));
             this.bajaMedicoTool.Name = "bajaMedicoTool";
-            this.bajaMedicoTool.Size = new System.Drawing.Size(153, 26);
+            this.bajaMedicoTool.Size = new System.Drawing.Size(198, 26);
             this.bajaMedicoTool.Text = "Eliminar ";
             // 
             // modificacionMedicoTool
@@ -132,15 +140,16 @@
             this.modificacionMedicoTool.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modificacionMedicoTool.Image = ((System.Drawing.Image)(resources.GetObject("modificacionMedicoTool.Image")));
             this.modificacionMedicoTool.Name = "modificacionMedicoTool";
-            this.modificacionMedicoTool.Size = new System.Drawing.Size(153, 26);
-            this.modificacionMedicoTool.Text = "Modificar ";
+            this.modificacionMedicoTool.Size = new System.Drawing.Size(198, 26);
+            this.modificacionMedicoTool.Text = "Listar y/o buscar";
             // 
             // clinicaTSMI
             // 
             this.clinicaTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem3,
             this.altaClinicaTool,
-            this.bajaClinicaTool,
-            this.modificacionClinicaTool});
+            this.modificacionClinicaTool,
+            this.bajaClinicaTool});
             this.clinicaTSMI.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.clinicaTSMI.Margin = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.clinicaTSMI.Name = "clinicaTSMI";
@@ -152,7 +161,7 @@
             this.altaClinicaTool.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.altaClinicaTool.Image = ((System.Drawing.Image)(resources.GetObject("altaClinicaTool.Image")));
             this.altaClinicaTool.Name = "altaClinicaTool";
-            this.altaClinicaTool.Size = new System.Drawing.Size(180, 26);
+            this.altaClinicaTool.Size = new System.Drawing.Size(198, 26);
             this.altaClinicaTool.Text = "Agregar ";
             this.altaClinicaTool.Click += new System.EventHandler(this.altaClinicaTool_Click);
             // 
@@ -161,7 +170,7 @@
             this.bajaClinicaTool.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bajaClinicaTool.Image = ((System.Drawing.Image)(resources.GetObject("bajaClinicaTool.Image")));
             this.bajaClinicaTool.Name = "bajaClinicaTool";
-            this.bajaClinicaTool.Size = new System.Drawing.Size(180, 26);
+            this.bajaClinicaTool.Size = new System.Drawing.Size(198, 26);
             this.bajaClinicaTool.Text = "Eliminar";
             this.bajaClinicaTool.Click += new System.EventHandler(this.bajaClinicaTool_Click);
             // 
@@ -170,7 +179,7 @@
             this.modificacionClinicaTool.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modificacionClinicaTool.Image = ((System.Drawing.Image)(resources.GetObject("modificacionClinicaTool.Image")));
             this.modificacionClinicaTool.Name = "modificacionClinicaTool";
-            this.modificacionClinicaTool.Size = new System.Drawing.Size(180, 26);
+            this.modificacionClinicaTool.Size = new System.Drawing.Size(198, 26);
             this.modificacionClinicaTool.Text = "Modificar ";
             this.modificacionClinicaTool.Click += new System.EventHandler(this.modificacionClinicaTool_Click);
             // 
@@ -181,6 +190,30 @@
             this.salirTSMI.Name = "salirTSMI";
             this.salirTSMI.Size = new System.Drawing.Size(62, 34);
             this.salirTSMI.Text = "Salir";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(198, 26);
+            this.toolStripMenuItem1.Text = "Listar y/o buscar";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(198, 26);
+            this.toolStripMenuItem2.Text = "Modificar ";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem3.Image")));
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(198, 26);
+            this.toolStripMenuItem3.Text = "Listar y/o buscar";
             // 
             // frmInicio
             // 
@@ -214,5 +247,8 @@
         private System.Windows.Forms.ToolStripMenuItem bajaClinicaTool;
         private System.Windows.Forms.ToolStripMenuItem modificacionClinicaTool;
         private System.Windows.Forms.ToolStripMenuItem salirTSMI;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }

@@ -38,6 +38,7 @@ namespace Logica
 
             }
         }
+       
         private bool ValidarCampos(string razonSocial, string direccion, string telefono, string tipoClinica, out string mensaje)
         {
             if (string.IsNullOrEmpty(razonSocial) || razonSocial.Length < 3)
@@ -64,6 +65,7 @@ namespace Logica
             mensaje = string.Empty; // No hay errores
             return true;
         }
+       
         public DataTable ObtenerClinicas(out string mensaje)
         {
             mensaje = string.Empty;
@@ -77,6 +79,7 @@ namespace Logica
                 return null;
             }
         }
+       
         public bool ActualizarClinica(string razon_social, string direccion, string telefono, string tipo_clinica, out string mensaje)
         {
             if (!ValidarCampos(razon_social, direccion, telefono, tipo_clinica, out mensaje))
@@ -102,14 +105,17 @@ namespace Logica
                 return false;
             }
         }
+        
         public List<Clinica> ObtenerTodasLasClinicas()
         {
             return clinicaDatos.ObtenerTodasLasClinicas();
         }
+
         public DataTable ObtenerClinicasFiltradas(string razonSocial, string tipoClinica)
         {
             return clinicaDatos.ObtenerClinicas(razonSocial, tipoClinica);
         }
+
         public Clinica ObtenerClinica(string razon_social, out string mensaje)
         {
             try
@@ -132,6 +138,7 @@ namespace Logica
                 return null;
             }
         }
+
         public bool DarDeBajaClinica(string razon_social, out string mensaje)
         {
             try

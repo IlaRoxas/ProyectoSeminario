@@ -134,6 +134,21 @@ namespace Obra_Social_G1
             Close();
         }
 
-       
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscarNA_Click(object sender, EventArgs e)
+        {
+            string nombre = txtBuscarNA.Text.Trim();
+            DataTable dt = afiliadoLogica.ObtenerAfiliadosFiltrados(nombre);
+            dgvListaAfiliados.DataSource = dt;
+        }
     }
 }

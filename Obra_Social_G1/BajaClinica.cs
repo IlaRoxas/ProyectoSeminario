@@ -91,6 +91,7 @@ namespace Obra_Social_G1
             }
 
         }
+
         private void ActualizarClinicasActivas()
         {
             string mensaje;
