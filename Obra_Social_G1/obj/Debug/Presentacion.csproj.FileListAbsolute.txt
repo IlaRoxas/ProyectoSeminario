@@ -46,10 +46,12 @@ C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.frmAltaAfiliado.resources
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\bin\Debug\Infraestructura.dll
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\bin\Debug\Infraestructura.pdb
-C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.BajaAfiliado.resources
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\bin\Debug\Entidades.dll
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\bin\Debug\Entidades.pdb
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.ModificacionAfiliado.resources
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.FrmAltaClinica.resources
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.ModificacionClinica.resources
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.BajaClinica.resources
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.BajaAfiliado.resources
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.AltaMedico.resources
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.BajaMedico.resources

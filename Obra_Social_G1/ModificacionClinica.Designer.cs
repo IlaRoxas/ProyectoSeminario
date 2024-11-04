@@ -300,7 +300,7 @@
             this.Controls.Add(this.pnlBuscador);
             this.Controls.Add(this.dgvListaClinicas);
             this.Name = "ModificacionClinica";
-            this.Text = "Actualizar Clínica";
+            this.Text = "Modificar clínica";
             this.Load += new System.EventHandler(this.ModificacionClinica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaClinicas)).EndInit();
             this.pnlBuscador.ResumeLayout(false);

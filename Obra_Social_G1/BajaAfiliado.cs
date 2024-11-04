@@ -1,51 +1,70 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using Entidades;
 using Logica;
-using Entidades;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
 namespace Obra_Social_G1
 {
     public partial class BajaAfiliado : Form
     {
-        private readonly AfiliadoLogica afiliadoLogica;
-
-        /// <summary>
-        /// Constructor de la clase <see cref="BajaAfiliado"/>.
-        /// Inicializa una nueva instancia de la clase <see cref="BajaAfiliado"/> y configura la lógica para gestionar la baja de afiliados.
-        /// </summary>
+        AfiliadoLogica afiliadoLogica;
         public BajaAfiliado()
         {
             InitializeComponent();
-            afiliadoLogica = new AfiliadoLogica();
+            afiliadoLogica=new AfiliadoLogica();
         }
-
-        /// <summary>
-        /// Maneja el evento de clic del botón para dar de baja a un afiliado.
-        /// Valida el número de afiliado ingresado, busca al afiliado en la base de datos y, si es encontrado,
-        /// solicita confirmación para proceder con la baja.
-        /// </summary>
-        /// <param name="sender">El objeto que envía el evento.</param>
-        /// <param name="e">Los argumentos del evento.</param>
-        private void btnBajaAf_Click(object sender, EventArgs e)
+        private void BajaAfiliados_Load(object sender, EventArgs e)
         {
-            string numeroAfiliado = txtNroBajaAf.Text.Trim();
+            string mensaje;
+            DataTable clinicas = afiliadoLogica.ObtenerAfiliados(out mensaje);
+
+            if (clinicas != null)
+            {
+                dgvListaAfiliados.DataSource = clinicas;
+            }
+            else
+            {
+                MessageBox.Show(mensaje, "Error al cargar datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void dgvListaAfiliados_SelectionChanged(object sender, EventArgs e)
+        {
+            txtNroAf.Text = Convert.ToString(dgvListaAfiliados.CurrentRow.Cells["numero_afiliado"].Value);
+            txtNombre.Text = Convert.ToString(dgvListaAfiliados.CurrentRow.Cells["nombre"].Value);
+            txtApellido.Text = Convert.ToString(dgvListaAfiliados.CurrentRow.Cells["apellido"].Value);
+            txtDomicilio.Text = Convert.ToString(dgvListaAfiliados.CurrentRow.Cells["domicilio"].Value);
+            txtTelefono.Text = Convert.ToString(dgvListaAfiliados.CurrentRow.Cells["telefono"].Value);
+            txtEmail.Text = Convert.ToString(dgvListaAfiliados.CurrentRow.Cells["email"].Value);
+
+        }
+        private void btnEliminarAf_Click(object sender, EventArgs e)
+        {
+            string numero_afiliado = txtNroAf.Text.Trim();
             string mensaje;
             // Validar si el campo no está vacío
 
-            if (string.IsNullOrEmpty(numeroAfiliado))
+            if (string.IsNullOrEmpty(numero_afiliado))
             {
-                MessageBox.Show("Por favor, ingrese un número de afiliado.", "Campo requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, indique un nombre.", "Campo requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Buscar el afiliado en la base de datos
-            Afiliado afiliado = afiliadoLogica.ObtenerAfiliado(numeroAfiliado, out mensaje);
+            // Buscar la clinica en la base de datos
+            Afiliado afiliado = afiliadoLogica.ObtenerAfiliado(numero_afiliado, out mensaje);
 
 
             if (afiliado != null)
             {
                 // Confirmación para dar de baja
                 var confirmacion = MessageBox.Show(
-                    $"¿Está seguro de que desea eliminar a {afiliado.nombre} {afiliado.apellido} ({afiliado.email})?",
+                    $"¿Está seguro de que desea eliminar a {afiliado.nombre} {afiliado.apellido} ({afiliado.numero_afiliado})?",
                     "Confirmar eliminación",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning);
@@ -53,10 +72,12 @@ namespace Obra_Social_G1
                 if (confirmacion == DialogResult.Yes)
                 {
                     // Intentar dar de baja al afiliado
-                    if (afiliadoLogica.DarDeBajaAfiliado(numeroAfiliado, out mensaje))
+                    if (afiliadoLogica.DarDeBajaAfiliado(numero_afiliado, out mensaje))
                     {
                         MessageBox.Show("Afiliado dado de baja correctamente.", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarTextBoxes();
+                        ActualizarAfiliadosActivos(); // Actualiza el DataGridView
+
                     }
                     else
                     {
@@ -66,14 +87,29 @@ namespace Obra_Social_G1
             }
             else
             {
-                MessageBox.Show(mensaje, "Afiliado no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(mensaje, "Afiliado no encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        private void ActualizarAfiliadosActivos()
+        {
+            string mensaje;
+            var afiliadosActivos = afiliadoLogica.ObtenerAfiliados(out mensaje);
 
-        /// <summary>
-        /// Limpia todos los controles de tipo TextBox en el formulario.
-        /// Recorre todos los controles del formulario y establece el texto de cada TextBox en vacío.
-        /// </summary>
+            if (afiliadosActivos != null)
+            {
+                dgvListaAfiliados.DataSource = afiliadosActivos;
+            }
+            else
+            {
+                MessageBox.Show(mensaje, "Error al obtener afiliados activos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnBuscarNA_Click(object sender, EventArgs e)
+        {
+            string nombre = txtBuscarNA.Text.Trim();
+            DataTable dt = afiliadoLogica.ObtenerAfiliadosFiltrados(nombre);
+            dgvListaAfiliados.DataSource = dt;
+        }
         private void LimpiarTextBoxes()
         {
             foreach (Control control in this.Controls)
@@ -83,6 +119,10 @@ namespace Obra_Social_G1
                     ((TextBox)control).Text = string.Empty;
                 }
             }
+        }
+        private void btnCancelarAf_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

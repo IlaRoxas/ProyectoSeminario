@@ -58,6 +58,12 @@
     <Compile Include="AltaClinica.Designer.cs">
       <DependentUpon>AltaClinica.cs</DependentUpon>
     </Compile>
+    <Compile Include="AltaMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaMedico.Designer.cs">
+      <DependentUpon>AltaMedico.cs</DependentUpon>
+    </Compile>
     <Compile Include="BajaAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,12 @@
     </Compile>
     <Compile Include="BajaClinica.Designer.cs">
       <DependentUpon>BajaClinica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BajaMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BajaMedico.Designer.cs">
+      <DependentUpon>BajaMedico.cs</DependentUpon>
     </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
@@ -102,11 +114,17 @@
     <EmbeddedResource Include="AltaClinica.resx">
       <DependentUpon>AltaClinica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AltaMedico.resx">
+      <DependentUpon>AltaMedico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BajaAfiliado.resx">
       <DependentUpon>BajaAfiliado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BajaClinica.resx">
       <DependentUpon>BajaClinica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BajaMedico.resx">
+      <DependentUpon>BajaMedico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>

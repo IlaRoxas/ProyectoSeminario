@@ -2,7 +2,6 @@
 using System;
 using System.Data;
 using System.Text.RegularExpressions;
-using System.Runtime.InteropServices;
 using Entidades;
 using System.Collections.Generic;
 
@@ -250,7 +249,7 @@ namespace Logica
         {
             if (string.IsNullOrEmpty(nombre) || !Regex.IsMatch(nombre, @"^[a-zA-Z]{3,}$"))
             {
-                mensaje = "El nombre debe tener al menos 3 letras, sin números ni espacioa.";
+                mensaje = "El nombre debe tener al menos 3 letras, sin números ni espacios.";
                 return false;
             }
             if (string.IsNullOrEmpty(apellido) || !Regex.IsMatch(apellido, @"^[a-zA-Z]{3,}$"))
@@ -277,6 +276,7 @@ namespace Logica
             mensaje = string.Empty; // No hay errores
             return true;
         }
+
         public DataTable ObtenerAfiliadosFiltrados(string nombre)
         {
             return afiliadoDatos.ObtenerAfiliados(nombre);

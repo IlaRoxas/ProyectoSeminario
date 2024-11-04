@@ -191,7 +191,7 @@
             this.Controls.Add(this.lblRazonSocial);
             this.Controls.Add(this.lblAltaClinica);
             this.Name = "FrmAltaClinica";
-            this.Text = "Agregar Clínica";
+            this.Text = "Agregar clínica";
             this.ResumeLayout(false);
             this.PerformLayout();
 

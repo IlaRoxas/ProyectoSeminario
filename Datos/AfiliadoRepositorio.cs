@@ -177,7 +177,7 @@ namespace Datos
         {
             using (MySqlConnection conexion =GetConnection())
             {
-                string query = "UPDATE afiliado SET nombre = @nombre, apellido = @apellido, domicilio = @domicilio, telefono = @telefono, email = @email WHERE numero_afiliado = @numero_afiliado";
+                string query = "UPDATE afiliado SET nombre = @nombre, apellido = @apellido, domicilio = @domicilio, telefono = @telefono, email = @email WHERE numero_afiliado = @numero_afiliado and bajaLogica = 0";
 
                 using (var cmd = new MySqlCommand(query, conexion))
                 {
@@ -213,7 +213,7 @@ namespace Datos
 
             using (var conexion = GetConnection())
             {
-                string query = "SELECT numero_afiliado, nombre, apellido, domicilio, telefono, email FROM afiliado";
+                string query = "SELECT numero_afiliado, nombre, apellido, domicilio, telefono, email FROM afiliado WHERE bajaLogica = 0";
 
                 using (var cmd = new MySqlCommand(query, conexion))
                 using (var reader = cmd.ExecuteReader())
@@ -235,6 +235,8 @@ namespace Datos
 
             return afiliados;
         }
+
+
         public DataTable ObtenerAfiliados(string nombre)
         {
             string query = "SELECT numero_afiliado, nombre, apellido, domicilio, telefono, email FROM afiliado WHERE bajaLogica = 0";

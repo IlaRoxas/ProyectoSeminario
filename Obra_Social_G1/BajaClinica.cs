@@ -43,7 +43,6 @@ namespace Obra_Social_G1
             cbTipoClinica.Text = Convert.ToString(dgvListaClinicas.CurrentRow.Cells["tipo_clinica"].Value);
 
         }
-
         private void btnEliminarCl_Click(object sender, EventArgs e)
         {
             string razon_social = txtRazonSocialCl.Text.Trim();
@@ -91,7 +90,6 @@ namespace Obra_Social_G1
             }
 
         }
-
         private void ActualizarClinicasActivas()
         {
             string mensaje;
@@ -106,7 +104,6 @@ namespace Obra_Social_G1
                 MessageBox.Show(mensaje, "Error al obtener clínicas activas", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnBuscarGral_Click(object sender, EventArgs e)
         {
             string razonSocial = txtBuscarRS.Text.Trim();
@@ -114,7 +111,6 @@ namespace Obra_Social_G1
             DataTable dt = logicaClinica.ObtenerClinicasFiltradas(razonSocial, tipoClinica);
             dgvListaClinicas.DataSource = dt;
         }
-
         private void LimpiarTextBoxes()
         {
             foreach (Control control in this.Controls)
@@ -125,8 +121,6 @@ namespace Obra_Social_G1
                 }
             }
         }
-
-
         private void btnCancelarCl_Click(object sender, EventArgs e)
         {
             Close();
