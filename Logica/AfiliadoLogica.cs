@@ -4,16 +4,22 @@ using System.Data;
 using System.Text.RegularExpressions;
 using Entidades;
 using System.Collections.Generic;
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
+
 
 namespace Logica
 {
     public class AfiliadoLogica
     {
         private AfiliadoRepositorio afiliadoDatos;
+        private readonly HttpClient _httpClient;
 
         public AfiliadoLogica()
         {
             afiliadoDatos = new AfiliadoRepositorio();
+            _httpClient = new HttpClient();
+
         }
         /// <summary>
         /// Agrega un nuevo afiliado a la base de datos después de validar los campos requeridos.
@@ -41,9 +47,18 @@ namespace Logica
                 mensaje = "El número de afiliado debe tener exactamente 12 dígitos.";
                 return false;
             }
+
+            bool afiliadoVinculadoAlTerrorismo = false;
             // Llamar al método de la capa de datos para guardar el afiliado
             try
             {
+                afiliadoVinculadoAlTerrorismo = consultarListadoTerrorismo(nombre, apellido);
+                if (afiliadoVinculadoAlTerrorismo)
+                {
+                    mensaje = "El usuario se encuentra sospechoso de terrorismo. Por favor contactarse con el administrador de sistemas.";
+                    return false;
+                }
+                
                 afiliadoDatos.InsertarAfiliado(nombre, apellido, telefono, domicilio, email, numeroAfiliado, creadoPor);
                 mensaje = "Afiliado agregado correctamente";
                 return true;
@@ -54,6 +69,40 @@ namespace Logica
                 return false;
 
             }
+        }
+
+
+        /**
+         * Uso de API externa para consultar si la persona se encuentra 
+         * en el listado de personas buscadas por relación con terrorismo 
+         */
+        protected bool consultarListadoTerrorismo(string nombre, string apellido)
+        {
+            try
+            {
+                string url = "https://repet.jus.gob.ar/xml/personas.json";
+                var response = _httpClient.GetStringAsync(url).Result;
+
+                JArray personas = JArray.Parse(response);
+
+                foreach (var persona in personas)
+                {
+                    string firstName = persona["FIRST_NAME"]?.ToString();
+                    string secondName = persona["SECOND_NAME"]?.ToString();
+
+                    if (firstName == nombre && secondName == apellido)
+                    {
+                        return true;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //do nothing
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -283,4 +332,5 @@ namespace Logica
         }
     }
 
+   
 }

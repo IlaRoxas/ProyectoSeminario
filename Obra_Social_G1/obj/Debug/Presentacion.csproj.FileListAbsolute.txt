@@ -5,8 +5,6 @@ C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.exe
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.pdb
-C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Presentacion.csproj.SuggestedBindingRedirects.cache
-C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.exe.config
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\bin\Debug\Obra_Social_G1.exe.config
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\bin\Debug\Obra_Social_G1.exe
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\bin\Debug\Obra_Social_G1.pdb
@@ -56,3 +54,6 @@ C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.AltaMedico.resources
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.BajaMedico.resources
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.ModificacionMedico.resources
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\bin\Debug\Logica.dll.config
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\bin\Debug\Newtonsoft.Json.xml

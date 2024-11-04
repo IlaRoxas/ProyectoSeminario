@@ -86,5 +86,10 @@ namespace Obra_Social_G1
             DataTable dt = logicaMedico.ObtenerMedicosFiltrados(nombre);
             dgvListaMedicos.DataSource = dt;
         }
+
+        private void btnCancelarCl_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
