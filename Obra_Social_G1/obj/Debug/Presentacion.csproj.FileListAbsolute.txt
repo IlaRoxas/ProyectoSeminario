@@ -55,3 +55,4 @@ C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.BajaAfiliado.resources
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.AltaMedico.resources
 C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.BajaMedico.resources
+C:\Users\Facu\Desktop\IlanaRojas\Proyecto Seminario\Obra_Social_G1\Obra_Social_G1\obj\Debug\Obra_Social_G1.ModificacionMedico.resources

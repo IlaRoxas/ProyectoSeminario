@@ -177,7 +177,7 @@ namespace Datos
         {
             using (MySqlConnection conexion =GetConnection())
             {
-                string query = "UPDATE afiliado SET nombre = @nombre, apellido = @apellido, domicilio = @domicilio, telefono = @telefono, email = @email WHERE numero_afiliado = @numero_afiliado and bajaLogica = 0";
+                string query = "UPDATE afiliado SET nombre = @nombre, apellido = @apellido, domicilio = @domicilio, telefono = @telefono, email = @email WHERE numero_afiliado = @numero_afiliado AND bajaLogica = 0";
 
                 using (var cmd = new MySqlCommand(query, conexion))
                 {

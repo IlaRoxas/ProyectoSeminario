@@ -136,6 +136,7 @@
             this.modificacionMedicoTool.Name = "modificacionMedicoTool";
             this.modificacionMedicoTool.Size = new System.Drawing.Size(198, 26);
             this.modificacionMedicoTool.Text = "Listar y/o buscar";
+            this.modificacionMedicoTool.Click += new System.EventHandler(this.modificacionMedicoTool_Click);
             // 
             // altaMedicoTool
             // 
@@ -153,6 +154,7 @@
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(198, 26);
             this.toolStripMenuItem2.Text = "Modificar ";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // bajaMedicoTool
             // 

@@ -94,5 +94,17 @@ namespace Obra_Social_G1
             BajaMedico frmBajaMedico = new BajaMedico();
             frmBajaMedico.Show();
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            ModificacionMedico frmModifMedico = new ModificacionMedico();
+            frmModifMedico.Show();
+        }
+
+        private void modificacionMedicoTool_Click(object sender, EventArgs e)
+        {
+            ModificacionMedico frmModifMedico = new ModificacionMedico();
+            frmModifMedico.Show();
+        }
     }
 }

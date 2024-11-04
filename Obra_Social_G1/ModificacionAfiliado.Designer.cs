@@ -30,20 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificacionAfiliado));
             this.dgvListaAfiliados = new System.Windows.Forms.DataGridView();
-            this.txtNroAf = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnModificarAf = new System.Windows.Forms.Button();
             this.btnCancelarAf = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtDomicilio = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,6 +42,16 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnBuscarNA = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtDomicilio = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtNroAf = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaAfiliados)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlBuscador.SuspendLayout();
@@ -66,31 +66,6 @@
             this.dgvListaAfiliados.TabIndex = 0;
             this.dgvListaAfiliados.SelectionChanged += new System.EventHandler(this.dgvListaAfiliados_SelectionChanged);
             // 
-            // txtNroAf
-            // 
-            this.txtNroAf.Enabled = false;
-            this.txtNroAf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNroAf.Location = new System.Drawing.Point(92, 3);
-            this.txtNroAf.Name = "txtNroAf";
-            this.txtNroAf.Size = new System.Drawing.Size(167, 26);
-            this.txtNroAf.TabIndex = 3;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(92, 38);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(167, 26);
-            this.txtNombre.TabIndex = 4;
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(93, 73);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(167, 26);
-            this.txtApellido.TabIndex = 5;
-            // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,62 +73,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(147, 26);
             this.txtEmail.TabIndex = 6;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(93, 143);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(167, 26);
-            this.txtTelefono.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(4, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 21);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "N° Afiliado";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(4, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 21);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Nombre    ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(5, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 21);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Apellido    ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(5, 145);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 21);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Teléfono    ";
             // 
             // label5
             // 
@@ -192,26 +111,6 @@
             this.btnCancelarAf.Text = "CANCELAR";
             this.btnCancelarAf.UseVisualStyleBackColor = false;
             this.btnCancelarAf.Click += new System.EventHandler(this.btnCancelarAf_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(5, 111);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 21);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Domicilio  ";
-            // 
-            // txtDomicilio
-            // 
-            this.txtDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDomicilio.Location = new System.Drawing.Point(93, 108);
-            this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(167, 26);
-            this.txtDomicilio.TabIndex = 6;
             // 
             // panel1
             // 
@@ -314,6 +213,107 @@
             this.label7.Text = "Buscar nombre o apellido:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(93, 143);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(167, 26);
+            this.txtTelefono.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(5, 145);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 21);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Teléfono    ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(5, 111);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 21);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Domicilio  ";
+            // 
+            // txtDomicilio
+            // 
+            this.txtDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDomicilio.Location = new System.Drawing.Point(93, 108);
+            this.txtDomicilio.Name = "txtDomicilio";
+            this.txtDomicilio.Size = new System.Drawing.Size(167, 26);
+            this.txtDomicilio.TabIndex = 6;
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Location = new System.Drawing.Point(93, 73);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(167, 26);
+            this.txtApellido.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(5, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 21);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Apellido    ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(4, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 21);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Nombre    ";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(92, 38);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(167, 26);
+            this.txtNombre.TabIndex = 4;
+            // 
+            // txtNroAf
+            // 
+            this.txtNroAf.Enabled = false;
+            this.txtNroAf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNroAf.Location = new System.Drawing.Point(92, 3);
+            this.txtNroAf.Name = "txtNroAf";
+            this.txtNroAf.Size = new System.Drawing.Size(167, 26);
+            this.txtNroAf.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(4, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 21);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "N° Afiliado";
+            // 
             // ModificacionAfiliado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,20 +343,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvListaAfiliados;
-        private System.Windows.Forms.TextBox txtNroAf;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnModificarAf;
         private System.Windows.Forms.Button btnCancelarAf;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtDomicilio;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -365,5 +355,15 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnBuscarNA;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtNroAf;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtDomicilio;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label label3;
     }
 }

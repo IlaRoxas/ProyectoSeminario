@@ -131,6 +131,56 @@ namespace Datos
                 }
             }
         }
+        public List<Medico> ObtenerTodosLosMedicos()
+        {
+            List<Medico> medicos= new List<Medico>();
+
+            using (var conexion = GetConnection())
+            {
+                string query = "SELECT email_medico, nombre, apellido, especialidad, numero_matricula, telefono FROM medico";
+
+                using (var cmd = new MySqlCommand(query, conexion))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        medicos.Add(new Medico
+                        {
+                            email_medico = reader["email_medico"].ToString(),
+                            nombre= reader["nombre"].ToString(),
+                            apellido= reader["apellido"].ToString(),
+                            especialidad= reader["especialidad"].ToString(),
+                            numero_matricula= reader["numero_matricula"].ToString(),
+                            telefono = reader["telefono"].ToString()
+                        });
+                    }
+                }
+            }
+
+            return medicos;
+        }
+        public bool ActualizarMedico(string email_medico, string nombre, string apellido, string especialidad, string numero_matricula, string telefono)
+        {
+            using (MySqlConnection conexion = GetConnection())
+            {
+                string query = "UPDATE medico SET email_medico = @email_medico, nombre = @nombre, apellido = @apellido, especialidad = @especialidad, numero_matricula = @numero_matricula, telefono = @telefono WHERE email_medico = @email_medico AND bajaLogica = 0";
+
+                using (var cmd = new MySqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@email_medico", email_medico);
+                    cmd.Parameters.AddWithValue("@nombre", nombre);
+                    cmd.Parameters.AddWithValue("@apellido", apellido);
+                    cmd.Parameters.AddWithValue("@especialidad", especialidad);
+                    cmd.Parameters.AddWithValue("@numero_matricula", numero_matricula);
+                    cmd.Parameters.AddWithValue("@telefono", telefono);
+                    cmd.Parameters.AddWithValue("@actualizado_el", DateTime.Now);
+
+
+                    int resultado = cmd.ExecuteNonQuery();
+                    return resultado > 0;
+                }
+            }
+        }
     }
     
 }

@@ -156,6 +156,35 @@ namespace Logica
         {
             return medicoDatos.ObtenerMedicos(nombre);
         }
+        public bool ActualizarMedico(string email_medico, string nombre, string apellido, string especialidad, string numero_matricula, string telefono, out string mensaje)
+        {
+            if (!ValidarCampos(email_medico, nombre, apellido, especialidad, numero_matricula, telefono, out mensaje))
+            {
+                return false;
+            }
+            try
+            {
+                bool resultado = medicoDatos.ActualizarMedico(email_medico, nombre, apellido, especialidad, numero_matricula, telefono);
+                if (resultado)
+                {
+                    mensaje = "Médico actualizado correctamente.";
+                }
+                else
+                {
+                    mensaje = "No se pudo actualizar el médico.";
+                }
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                mensaje = $"Error al actualizar el médico: {ex.Message}";
+                return false;
+            }
+        }
+        public List<Medico> ObtenerTodosLosMedicos()
+        {
+            return medicoDatos.ObtenerTodosLosMedicos();
+        }
 
     }
 }
