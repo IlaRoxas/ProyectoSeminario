@@ -72,10 +72,22 @@ namespace Logica
         }
 
 
-        /**
-         * Uso de API externa para consultar si la persona se encuentra 
-         * en el listado de personas buscadas por relación con terrorismo 
-         */
+        /// <summary>
+        /// Verifica si una persona, identificada por su nombre y apellido, se encuentra en una lista de personas relacionadas con el terrorismo.
+        /// </summary>
+        /// <param name="nombre">El primer nombre de la persona a verificar.</param>
+        /// <param name="apellido">El segundo nombre o apellido de la persona a verificar.</param>
+        /// <returns>
+        /// Devuelve `true` si la persona está en la lista de personas relacionadas con el terrorismo; de lo contrario, devuelve `false`.
+        /// </returns>
+        /// <remarks>
+        /// El método realiza una solicitud HTTP a una API que devuelve un archivo JSON con el listado de personas.
+        /// La API se consulta en la URL especificada y se espera que la respuesta sea un arreglo JSON donde cada elemento
+        /// contiene los campos "FIRST_NAME" y "SECOND_NAME".
+        ///
+        /// En caso de que ocurra un error (por ejemplo, si la API no responde), el método captura la excepción y simplemente retorna `false`.
+        /// </remarks>
+        /// <exception cref="Exception">Captura cualquier excepción que pueda ocurrir durante la solicitud HTTP o el procesamiento JSON.</exception>
         protected bool consultarListadoTerrorismo(string nombre, string apellido)
         {
             try
@@ -326,6 +338,17 @@ namespace Logica
             return true;
         }
 
+        /// <summary>
+        /// Obtiene un listado de afiliados filtrado por nombre.
+        /// </summary>
+        /// <param name="nombre">Nombre del afiliado por el cual se desea filtrar.</param>
+        /// <returns>
+        /// Un <see cref="DataTable"/> que contiene los registros de afiliados cuyo nombre coincide con el filtro especificado.
+        /// </returns>
+        /// <remarks>
+        /// Este método utiliza una capa de datos para ejecutar la consulta de afiliados basada en el nombre proporcionado,
+        /// retornando los resultados en formato de tabla.
+        /// </remarks>
         public DataTable ObtenerAfiliadosFiltrados(string nombre)
         {
             return afiliadoDatos.ObtenerAfiliados(nombre);

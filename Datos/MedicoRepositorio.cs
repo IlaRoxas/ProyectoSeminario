@@ -11,6 +11,16 @@ namespace Datos
 {
     public class MedicoRepositorio:Conexion
     {
+        /// <summary>
+        /// Inserta un nuevo médico en la base de datos.
+        /// </summary>
+        /// <param name="email_medico">Email del médico.</param>
+        /// <param name="nombre">Nombre del médico.</param>
+        /// <param name="apellido">Apellido del médico.</param>
+        /// <param name="especialidad">Especialidad médica.</param>
+        /// <param name="numero_matricula">Número de matrícula profesional.</param>
+        /// <param name="telefono">Número de teléfono del médico.</param>
+        /// <param name="creado_por">Nombre del usuario que crea el registro.</param>
         public void InsertarMedico(string email_medico, string nombre, string apellido, string especialidad, string numero_matricula, string telefono, string creado_por)
         {
             using (var conexion = GetConnection())
@@ -33,6 +43,11 @@ namespace Datos
                 }
             }
         }
+
+        /// <summary>
+        /// Obtiene todos los médicos activos (no dados de baja) de la base de datos.
+        /// </summary>
+        /// <returns>Un <see cref="DataTable"/> con los registros de médicos activos.</returns>
         public DataTable ObtenerTodosMedicos()
         {
             using (var conexion = GetConnection())
@@ -50,6 +65,12 @@ namespace Datos
                 }
             }
         }
+
+        /// <summary>
+        /// Obtiene los datos de un médico específico por su email.
+        /// </summary>
+        /// <param name="email_medico">Email del médico a buscar.</param>
+        /// <returns>Un objeto <see cref="Medico"/> con los datos del médico o <c>null</c> si no se encontró.</returns>
         public Medico ObtenerMedicoPorEmail(string email_medico)
         {
             Medico medico = null;
@@ -87,6 +108,11 @@ namespace Datos
             return medico;
         }
 
+        /// <summary>
+        /// Realiza una baja lógica de un médico en la base de datos, marcándolo como inactivo.
+        /// </summary>
+        /// <param name="email_medico">Email del médico a dar de baja.</param>
+        /// <returns><c>true</c> si la operación fue exitosa; de lo contrario, <c>false</c>.</returns>
         public bool DarBajaLogica(string email_medico)
         {
             using (var conexion = GetConnection())
@@ -101,6 +127,12 @@ namespace Datos
                 }
             }
         }
+
+        /// <summary>
+        /// Obtiene una lista de médicos filtrada por nombre o apellido.
+        /// </summary>
+        /// <param name="nombre">Nombre o apellido del médico para filtrar la búsqueda (opcional).</param>
+        /// <returns>Un <see cref="DataTable"/> con los registros de médicos que coinciden con el filtro especificado.</returns>
         public DataTable ObtenerMedicos(string nombre)
         {
             string query = "SELECT email_medico, nombre, apellido, especialidad, numero_matricula, telefono FROM medico WHERE bajaLogica = 0";
@@ -131,6 +163,11 @@ namespace Datos
                 }
             }
         }
+
+        /// <summary>
+        /// Obtiene una lista de todos los médicos de la base de datos.
+        /// </summary>
+        /// <returns>Una lista de objetos <see cref="Medico"/> con los datos de cada médico.</returns>
         public List<Medico> ObtenerTodosLosMedicos()
         {
             List<Medico> medicos= new List<Medico>();
@@ -159,6 +196,17 @@ namespace Datos
 
             return medicos;
         }
+
+        /// <summary>
+        /// Actualiza los datos de un médico en la base de datos.
+        /// </summary>
+        /// <param name="email_medico">Email del médico a actualizar.</param>
+        /// <param name="nombre">Nuevo nombre del médico.</param>
+        /// <param name="apellido">Nuevo apellido del médico.</param>
+        /// <param name="especialidad">Nueva especialidad del médico.</param>
+        /// <param name="numero_matricula">Nuevo número de matrícula del médico.</param>
+        /// <param name="telefono">Nuevo teléfono del médico.</param>
+        /// <returns><c>true</c> si la actualización fue exitosa; de lo contrario, <c>false</c>.</returns>
         public bool ActualizarMedico(string email_medico, string nombre, string apellido, string especialidad, string numero_matricula, string telefono)
         {
             using (MySqlConnection conexion = GetConnection())

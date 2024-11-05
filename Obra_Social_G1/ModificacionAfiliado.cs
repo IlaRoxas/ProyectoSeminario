@@ -129,26 +129,52 @@ namespace Obra_Social_G1
             dgvListaAfiliados.Columns["bajaLogica"].Visible = false;
         }
 
-        private void btnCancelarAf_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Manejador del evento que se activa al hacer clic en el botón de buscar afiliados.
+        /// Filtra la lista de afiliados utilizando el nombre y el apellido ingresado en los campos de texto y muestra los resultados en el DataGridView.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void btnBuscarNA_Click(object sender, EventArgs e)
         {
             string nombre = txtBuscarNA.Text.Trim();
             DataTable dt = afiliadoLogica.ObtenerAfiliadosFiltrados(nombre);
             dgvListaAfiliados.DataSource = dt;
         }
+
+        /// <summary>
+        /// Manejador del evento que se activa al hacer clic en el botón de cancelar.
+        /// Cierra el formulario de modificación de afiliados.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
+        private void btnCancelarAf_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        /// <summary>
+        /// Manejador del evento que se activa al pintar el panel.
+        /// Este método está actualmente vacío y se puede personalizar para dibujar en el panel si es necesario.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento de pintura.</param>
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Manejador del evento que se activa al hacer clic en el label7.
+        /// Este método está actualmente vacío y no realiza ninguna acción.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

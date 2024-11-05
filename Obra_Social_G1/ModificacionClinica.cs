@@ -17,6 +17,12 @@ namespace Obra_Social_G1
             logicaClinica=new ClinicaLogica();
         }
 
+        /// <summary>
+        /// Manejador del evento que se activa al cargar el formulario.
+        /// Carga la lista de clínicas en el DataGridView desde la base de datos.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void ModificacionClinica_Load(object sender, EventArgs e)
         {
             string mensaje;
@@ -32,6 +38,12 @@ namespace Obra_Social_G1
             }
         }
 
+        /// <summary>
+        /// Manejador del evento que se activa cuando cambia la selección en el DataGridView de clínicas.
+        /// Actualiza los campos de texto con la información de la clínica seleccionada.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void dgvListaClinicas_SelectionChanged(object sender, EventArgs e)
         {
             txtRazonSocialCl.Text = Convert.ToString(dgvListaClinicas.CurrentRow.Cells["razon_social"].Value);
@@ -40,6 +52,12 @@ namespace Obra_Social_G1
             cbTipoClinica.Text = Convert.ToString(dgvListaClinicas.CurrentRow.Cells["tipo_clinica"].Value);
         }
 
+        /// <summary>
+        /// Manejador del evento que se activa al hacer clic en el botón de modificar clínica.
+        /// Actualiza la información de la clínica seleccionada en la base de datos.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void btnModificarCl_Click(object sender, EventArgs e)
         {
             string mensaje;
@@ -61,6 +79,10 @@ namespace Obra_Social_G1
                 MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        /// <summary>
+        /// Carga la lista de todas las clínicas en el DataGridView, excluyendo algunos de sus atributos.
+        /// </summary>
         private void CargarDatosClinicas()
         {
             List<Clinica> clinicas= logicaClinica.ObtenerTodasLasClinicas(); // Este método debe obtener todos los afiliados de la base de datos.
@@ -72,6 +94,13 @@ namespace Obra_Social_G1
             dgvListaClinicas.Columns["bajaLogica"].Visible = false;
         }
 
+
+        /// <summary>
+        /// Manejador del evento que se activa al hacer clic en el botón de buscar clínicas.
+        /// Filtra las clínicas por razón social y tipo de clínica, mostrando los resultados en el DataGridView.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void btnBuscarGral_Click(object sender, EventArgs e)
         {
             string razonSocial = txtBuscarRS.Text.Trim();
@@ -80,6 +109,12 @@ namespace Obra_Social_G1
             dgvListaClinicas.DataSource= dt;
         }
 
+        /// <summary>
+        /// Manejador del evento que se activa al hacer clic en el botón de cancelar.
+        /// Cierra el formulario de modificación de clínica.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void btnCancelarCl_Click(object sender, EventArgs e)
         {
             Close();

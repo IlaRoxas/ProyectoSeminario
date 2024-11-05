@@ -83,6 +83,12 @@ namespace Obra_Social_G1
             }
         }
 
+        /// <summary>
+        /// Manejador del evento que se activa al hacer clic en el botón de cancelar.
+        /// Cierra el formulario de alta de afiliados.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void btnCancelarAf_Click(object sender, EventArgs e)
         {
             Close();

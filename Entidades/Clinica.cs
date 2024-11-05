@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Representa una clínica dentro del sistema, con sus datos y estado de baja lógica.
+    /// </summary>
     public class Clinica
     {
         public string razon_social { get; set; }

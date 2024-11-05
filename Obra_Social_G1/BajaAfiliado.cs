@@ -15,11 +15,19 @@ namespace Obra_Social_G1
     public partial class BajaAfiliado : Form
     {
         AfiliadoLogica afiliadoLogica;
+
         public BajaAfiliado()
         {
             InitializeComponent();
             afiliadoLogica=new AfiliadoLogica();
         }
+
+        /// <summary>
+        /// Manejador del evento que se activa al cargar el formulario.
+        /// Carga la lista de afiliados y la muestra en el DataGridView.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void BajaAfiliados_Load(object sender, EventArgs e)
         {
             string mensaje;
@@ -34,6 +42,13 @@ namespace Obra_Social_G1
                 MessageBox.Show(mensaje, "Error al cargar datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        /// <summary>
+        /// Manejador del evento que se activa al cambiar la selección en el DataGridView.
+        /// Muestra los detalles del afiliado seleccionado en los campos de texto.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void dgvListaAfiliados_SelectionChanged(object sender, EventArgs e)
         {
             txtNroAf.Text = Convert.ToString(dgvListaAfiliados.CurrentRow.Cells["numero_afiliado"].Value);
@@ -44,6 +59,13 @@ namespace Obra_Social_G1
             txtEmail.Text = Convert.ToString(dgvListaAfiliados.CurrentRow.Cells["email"].Value);
 
         }
+
+        /// <summary>
+        /// Manejador del evento que se activa al hacer clic en el botón de eliminar afiliado.
+        /// Valida el campo de número de afiliado y, si es correcto, intenta eliminar al afiliado del sistema.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void btnEliminarAf_Click(object sender, EventArgs e)
         {
             string numero_afiliado = txtNroAf.Text.Trim();
@@ -90,6 +112,11 @@ namespace Obra_Social_G1
                 MessageBox.Show(mensaje, "Afiliado no encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        /// <summary>
+        /// Actualiza la lista de afiliados activos en el DataGridView.
+        /// Este método se llama después de eliminar un afiliado para reflejar los cambios.
+        /// </summary>
         private void ActualizarAfiliadosActivos()
         {
             string mensaje;
@@ -104,12 +131,24 @@ namespace Obra_Social_G1
                 MessageBox.Show(mensaje, "Error al obtener afiliados activos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        /// <summary>
+        /// Manejador del evento que se activa al hacer clic en el botón de buscar afiliados por nombre y apellido.
+        /// Filtra la lista de afiliados y muestra los resultados en el DataGridView.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void btnBuscarNA_Click(object sender, EventArgs e)
         {
             string nombre = txtBuscarNA.Text.Trim();
             DataTable dt = afiliadoLogica.ObtenerAfiliadosFiltrados(nombre);
             dgvListaAfiliados.DataSource = dt;
         }
+
+        /// <summary>
+        /// Limpia todos los campos de texto en el formulario.
+        /// Este método se utiliza para restablecer el formulario después de una operación.
+        /// </summary>
         private void LimpiarTextBoxes()
         {
             foreach (Control control in this.Controls)
@@ -120,6 +159,13 @@ namespace Obra_Social_G1
                 }
             }
         }
+
+        /// <summary>
+        /// Manejador del evento que se activa al hacer clic en el botón de cancelar.
+        /// Cierra el formulario sin realizar ninguna acción adicional.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void btnCancelarAf_Click(object sender, EventArgs e)
         {
             Close();

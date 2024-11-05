@@ -15,12 +15,23 @@ namespace Obra_Social_G1
     public partial class ModificacionMedico : Form
     {
         MedicoLogica logicaMedico;
+        
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase ModificacionMedico.
+        /// Crea una instancia de MedicoLogica para manejar la lógica de negocio relacionada con médicos.
+        /// </summary>
         public ModificacionMedico()
         {
             InitializeComponent();
             logicaMedico=new MedicoLogica();
         }
 
+        /// <summary>
+        /// Manejador del evento que se activa cuando cambia la selección en el DataGridView de médicos.
+        /// Actualiza los campos de texto con la información del médico seleccionado.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void dgvListaMedicos_SelectionChanged(object sender, EventArgs e)
         {
             txtEmailMed.Text = Convert.ToString(dgvListaMedicos.CurrentRow.Cells["email_medico"].Value);
@@ -31,6 +42,12 @@ namespace Obra_Social_G1
             txtTelefono.Text = Convert.ToString(dgvListaMedicos.CurrentRow.Cells["telefono"].Value);
         }
 
+        /// <summary>
+        /// Manejador del evento que se activa al cargar el formulario.
+        /// Carga la lista de médicos en el DataGridView desde la base de datos.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void ModificacionMedico_Load(object sender, EventArgs e)
         {
             string mensaje;
@@ -46,6 +63,12 @@ namespace Obra_Social_G1
             }
         }
 
+        /// <summary>
+        /// Manejador del evento que se activa al hacer clic en el botón de modificar médico.
+        /// Actualiza la información del médico seleccionado en la base de datos.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void btnModificarCl_Click(object sender, EventArgs e)
         {
             string mensaje;
@@ -69,6 +92,10 @@ namespace Obra_Social_G1
                 MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        /// <summary>
+        /// Carga la lista de todos los médicos en el DataGridView, excluyendo algunos de sus atributos.
+        /// </summary>
         private void CargarDatosMedicos()
         {
             List<Medico> medicos = logicaMedico.ObtenerTodosLosMedicos(); // Este método debe obtener todos los afiliados de la base de datos.
@@ -80,6 +107,12 @@ namespace Obra_Social_G1
             dgvListaMedicos.Columns["bajaLogica"].Visible = false;
         }
 
+        /// <summary>
+        /// Manejador del evento que se activa al hacer clic en el botón de buscar médico.
+        /// Filtra los médicos por nombre o apellido y muestra los resultados en el DataGridView.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void btnBuscarNA_Click(object sender, EventArgs e)
         {
             string nombre = txtBuscarNA.Text.Trim();
@@ -87,6 +120,12 @@ namespace Obra_Social_G1
             dgvListaMedicos.DataSource = dt;
         }
 
+        /// <summary>
+        /// Manejador del evento que se activa al hacer clic en el botón de cancelar.
+        /// Cierra el formulario de modificación de médico.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void btnCancelarCl_Click(object sender, EventArgs e)
         {
             Close();

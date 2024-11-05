@@ -12,6 +12,14 @@ namespace Datos
 {
     public class ClinicaRepositorio:Conexion
     {
+        /// <summary>
+        /// Inserta una nueva clínica en la base de datos.
+        /// </summary>
+        /// <param name="razon_social">Razón social de la clínica.</param>
+        /// <param name="direccion">Dirección de la clínica.</param>
+        /// <param name="telefono">Número de teléfono de la clínica.</param>
+        /// <param name="tipo_clinica">Tipo de clínica.</param>
+        /// <param name="creado_por">Nombre del usuario que crea la clínica.</param>
         public void InsertarClinica(string razon_social, string direccion, string telefono, string tipo_clinica, string creado_por)
         {
             using (var conexion=GetConnection())
@@ -31,6 +39,10 @@ namespace Datos
             }
         }
 
+        /// <summary>
+        /// Obtiene todas las clínicas activas (no dadas de baja) de la base de datos.
+        /// </summary>
+        /// <returns>Un <see cref="DataTable"/> con los registros de clínicas activas.</returns>
         public DataTable ObtenerTodasClinicas()
         {
             using (var conexion = GetConnection())
@@ -49,6 +61,14 @@ namespace Datos
             }
         }
 
+        /// <summary>
+        /// Actualiza los datos de una clínica en la base de datos.
+        /// </summary>
+        /// <param name="razon_social">Razón social de la clínica a actualizar.</param>
+        /// <param name="direccion">Nueva dirección de la clínica.</param>
+        /// <param name="telefono">Nuevo número de teléfono de la clínica.</param>
+        /// <param name="tipo_clinica">Nuevo tipo de clínica.</param>
+        /// <returns><c>true</c> si la actualización fue exitosa; de lo contrario, <c>false</c>.</returns>
         public bool ActualizarClinica(string razon_social, string direccion, string telefono, string tipo_clinica)
         {
             using (MySqlConnection conexion = GetConnection())
@@ -69,6 +89,10 @@ namespace Datos
             }
         }
 
+        /// <summary>
+        /// Obtiene una lista de todas las clínicas de la base de datos.
+        /// </summary>
+        /// <returns>Una lista de objetos <see cref="Clinica"/> con los datos de cada clínica.</returns>
         public List<Clinica> ObtenerTodasLasClinicas()
         {
             List<Clinica> clinicas = new List<Clinica>();
@@ -96,6 +120,12 @@ namespace Datos
             return clinicas;
         }
 
+        /// <summary>
+        /// Obtiene una lista de clínicas filtradas por razón social y/o tipo de clínica.
+        /// </summary>
+        /// <param name="razon_social">Razón social de la clínica para filtrar la búsqueda (opcional).</param>
+        /// <param name="tipo_clinica">Tipo de clínica para filtrar la búsqueda (opcional).</param>
+        /// <returns>Un <see cref="DataTable"/> con los registros de clínicas que coinciden con el filtro especificado.</returns>
         public DataTable ObtenerClinicas(string razon_social, string tipo_clinica)
         {
             string query = "SELECT razon_social, direccion, telefono, tipo_clinica FROM clinica WHERE bajaLogica = 0";
@@ -138,6 +168,11 @@ namespace Datos
             }
         }
 
+        /// <summary>
+        /// Obtiene los datos de una clínica específica por razón social.
+        /// </summary>
+        /// <param name="razon_social">Razón social de la clínica a buscar.</param>
+        /// <returns>Un objeto <see cref="Clinica"/> con los datos de la clínica encontrada o <c>null</c> si no se encontró.</returns>
         public Clinica ObtenerClinicaPorRS(string razon_social)
         {
             Clinica clinica = null;
@@ -173,6 +208,11 @@ namespace Datos
             return clinica;
         }
 
+        /// <summary>
+        /// Realiza una baja lógica de una clínica en la base de datos, marcándola como inactiva.
+        /// </summary>
+        /// <param name="razon_social">Razón social de la clínica a dar de baja.</param>
+        /// <returns><c>true</c> si la operación fue exitosa; de lo contrario, <c>false</c>.</returns>
         public bool DarBajaLogica(string razon_social)
         {
             using (var conexion = GetConnection())

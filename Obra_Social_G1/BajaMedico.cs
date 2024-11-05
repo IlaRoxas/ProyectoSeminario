@@ -12,15 +12,29 @@ using System.Windows.Forms;
 
 namespace Obra_Social_G1
 {
+    /// <summary>
+    /// Clase que representa el formulario para dar de baja a un médico.
+    /// Permite al usuario seleccionar un médico de la lista y eliminarlo del sistema.
+    /// </summary>
     public partial class BajaMedico : Form
     {
         Logica.MedicoLogica medicoLogica;
+
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase <see cref="BajaMedico"/> y configura la lógica de médicos.
+        /// </summary>
         public BajaMedico()
         {
             InitializeComponent();
             medicoLogica=new Logica.MedicoLogica();
         }
 
+        /// <summary>
+        /// Manejador del evento que se activa al cambiar la selección en el DataGridView.
+        /// Muestra los detalles del médico seleccionado en los campos de texto.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void dgvListaMedicos_SelectionChanged(object sender, EventArgs e)
         {
             txtEmailMed.Text = Convert.ToString(dgvListaMedicos.CurrentRow.Cells["email_medico"].Value);
@@ -31,6 +45,12 @@ namespace Obra_Social_G1
             txtTelefono.Text = Convert.ToString(dgvListaMedicos.CurrentRow.Cells["telefono"].Value);
         }
 
+        /// <summary>
+        /// Manejador del evento que se activa al cargar el formulario.
+        /// Carga la lista de médicos y la muestra en el DataGridView.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void BajaMedico_Load(object sender, EventArgs e)
         {
             string mensaje;
@@ -46,6 +66,12 @@ namespace Obra_Social_G1
             }
         }
 
+        /// <summary>
+        /// Manejador del evento que se activa al hacer clic en el botón de eliminar médico.
+        /// Valida el campo de email del médico y, si es correcto, intenta eliminar al médico del sistema.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void btnEliminarMed_Click(object sender, EventArgs e)
         {
             string email_medico = txtEmailMed.Text.Trim();
@@ -93,6 +119,11 @@ namespace Obra_Social_G1
             }
            
         }
+
+        /// <summary>
+        /// Actualiza la lista de médicos activos en el DataGridView.
+        /// Este método se llama después de eliminar un médico para reflejar los cambios.
+        /// </summary>
         private void ActualizarMedicosActivos()
         {
             string mensaje;
@@ -107,6 +138,11 @@ namespace Obra_Social_G1
                 MessageBox.Show(mensaje, "Error al obtener médicos activos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        /// <summary>
+        /// Limpia todos los campos de texto en el formulario.
+        /// Este método se utiliza para restablecer el formulario después de una operación.
+        /// </summary>
         private void LimpiarTextBoxes()
         {
             foreach (Control control in this.Controls)
@@ -118,6 +154,12 @@ namespace Obra_Social_G1
             }
         }
 
+        /// <summary>
+        /// Manejador del evento que se activa al hacer clic en el botón de buscar médicos.
+        /// Filtra la lista de médicos por nombre y apellido y muestra los resultados en el DataGridView.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void btnBuscarNA_Click(object sender, EventArgs e)
         {
             string nombre = txtBuscarNA.Text.Trim();

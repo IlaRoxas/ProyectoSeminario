@@ -236,7 +236,15 @@ namespace Datos
             return afiliados;
         }
 
-
+        /// <summary>
+        /// Obtiene una lista de afiliados desde la base de datos, aplicando un filtro opcional de búsqueda por nombre o apellido.
+        /// </summary>
+        /// <param name="nombre">Nombre o apellido parcial del afiliado para filtrar la búsqueda (opcional).</param>
+        /// <returns>Un <see cref="DataTable"/> con los registros de afiliados que coinciden con el filtro especificado.</returns>
+        /// <remarks>
+        /// La consulta solo incluye afiliados activos (donde `bajaLogica` es 0). Si se proporciona un valor en el parámetro <paramref name="nombre"/>,
+        /// la búsqueda se realiza en los campos `nombre` y `apellido`, permitiendo coincidencias parciales.
+        /// </remarks>
         public DataTable ObtenerAfiliados(string nombre)
         {
             string query = "SELECT numero_afiliado, nombre, apellido, domicilio, telefono, email FROM afiliado WHERE bajaLogica = 0";
