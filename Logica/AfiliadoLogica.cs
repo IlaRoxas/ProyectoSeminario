@@ -97,6 +97,10 @@ namespace Logica
 
                 JArray personas = JArray.Parse(response);
 
+                //normalizar los datos de entrada
+                nombre = nombre.Trim().ToUpper();
+                apellido = apellido.Trim().ToUpper();
+
                 foreach (var persona in personas)
                 {
                     string firstName = persona["FIRST_NAME"]?.ToString();
@@ -354,6 +358,6 @@ namespace Logica
             return afiliadoDatos.ObtenerAfiliados(nombre);
         }
     }
-
+        
    
 }
